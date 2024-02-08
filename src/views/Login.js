@@ -52,7 +52,9 @@ export const Login = () => {
         }}>Access </button>
         <div className="forgot">
         <a>I forgot my password</a><br></br>
-        <a>Don't have ann account?</a>
+        <a>Don't have an account?</a><br></br>
+        <button type="submit"  onClick={() => {navigate("/Register")
+        }}>Create account</button>
       </div>
       </div>
     </form>

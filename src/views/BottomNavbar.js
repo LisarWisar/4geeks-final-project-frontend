@@ -1,11 +1,12 @@
 import React from "react";
 
 
-const Footer = () => {
+
+const BottomNavbar = () => {
     return(
-                <footer className="py-3 bg-dark">
+                <footer className="Footerpy-3 bg-dark">
                     <p className="text-center text-light">Copyright © newworldprogramers.com </p>
                 </footer>
     )
 }
-export default Footer;
+export default BottomNavbar;

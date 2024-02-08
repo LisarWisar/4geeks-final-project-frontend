@@ -1,24 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar.js";
-import Footer from "./Footer.js";
+import TopNavbar from "./TopNavbar.js";
+import BottomNavbar from "./BottomNavbar.js";
+import HeroSection from "./HeroSection.js";
+
 
 export const Home = () => {
     const navigate = useNavigate()
     return(
         <>
-        <Navbar />
-        <div className="container">
-            
-            <button onClick={() => {
-                navigate("/login")
-            }}>Go to login</button>
-
-
-        </div>
-
-
-
-        <Footer />
+        <TopNavbar />
+        <HeroSection/>
+        <BottomNavbar />
         </>
     )
 }

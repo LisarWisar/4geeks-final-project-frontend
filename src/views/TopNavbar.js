@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../TopNavbar.css";
 
+const TopNavbar = () => {
+const navigate = useNavigate()
 
-const Navbar = () => {
     return (
-        <div className="topbar bg-dark">
-      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="TopNav">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
         <a class="navbar-brand" href="#">
       <img src="https://i.pinimg.com/736x/da/6b/70/da6b7032661b3b91fcca1d3c1550bf0a.jpg" alt="Bootstrap" width="60" height="44"/>
@@ -26,6 +29,12 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
+
+{/*             <li className="nav-item">
+                <a className="nav-link text-light" href="#">
+                  Register
+                </a>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link active text-light" href="#">
                 <div className="icon">
@@ -35,22 +44,25 @@ const Navbar = () => {
             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
         </svg>
       </div>
+      <div onClick={() => {
+                navigate("/login")
+            }}>
                   Login 
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-light" href="#">
-                  Register
+                  </div>
                 </a>
               </li>
 
+
             </ul>
           </div>
+          
         </div>
       </nav>
+      
     </div>
+    
     )
 }
 
 
-export default Navbar;
+export default TopNavbar;
