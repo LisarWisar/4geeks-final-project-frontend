@@ -1,0 +1,40 @@
+.section{
+    width: 100%;
+    min-height: 100vh;
+    background-color: blue;
+}
+
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+.content-section{
+    width: 55%;
+}
+
+.image-section{
+    width: 40%;
+}
+.image-section img{
+    width:100% ;
+    height: auto;
+}
+
+.content-section .title{
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.content-section .content h3{
+    margin-top: 20px;
+    color:bisque;
+}
+
+.content-section .content p{
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+
+}
