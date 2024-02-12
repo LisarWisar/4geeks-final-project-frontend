@@ -1,13 +1,13 @@
 import React from "react";
-/* import "./HeroSection.css"; */
+import "../../styles/HeroSection.css";
 
 export const HeroSection = () => {
   return (
    <div className= "hero-container">
-<img src="https://thevetservice.com/wp-content/uploads/2022/06/e-8-1024x724.png" width={1600} height={500}/>
-<p className="bg-secondary p-8 text-white bg-opacity-50 fs-4">
-      Providing personalized and compassionate care for pets and their families.
-    </p>
+<img src="https://www.thesprucepets.com/thmb/YUljVq3q0JFibvyjEMS8ZcjToFY=/3867x2175/smart/filters:no_upscale()/vetandasst-family-Robert-Daly-Caiaimage-GettyImages-164853660-56a26b645f9b58b7d0ca07fc.jpg" width={1535} height={450}/>
+<div className="hero-text">
+      <h1>Providing personalized and compassionate care for pets and their families.</h1>
+    </div>
 
   </div>
   ) 
