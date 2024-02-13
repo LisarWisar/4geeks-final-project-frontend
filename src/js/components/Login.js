@@ -90,8 +90,3 @@ export const Login = () => {
     )
 }
 
-
-
-/* 
-onClick={ () => {navigate("/vet")
-        }} */
