@@ -9,7 +9,6 @@ export const Login = () => {
     const navigate = useNavigate()
 
     return(
-
 <div className="center">
     <ul className="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
       <li>
@@ -63,3 +62,4 @@ export const Login = () => {
     )
 }
 
+     
