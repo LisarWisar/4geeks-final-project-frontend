@@ -9,11 +9,11 @@ export const Login = () => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-
+      console.log(email, password)
       const login = {
         method: "POST",
         headers: {
-          "Content-Type": "aplication/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           "email": email,
