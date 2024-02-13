@@ -7,9 +7,9 @@ import { About } from "./js/components/About";
 import { MissionAndVission } from "./js/components/MissionAndVission";
 import { AboutTeam } from "./js/components/AboutTeam";
 import { ContactUs } from "./js/components/ContactUs";
-import { VetCalendarListed } from "./views/VetCalendarListed";
-import { VetFrontPage } from "./views/VetFrontPage";
-import { VetClinicalRecords } from "./views/VetClinicalRecords";
+import { VetCalendarListed } from "./js/views/VetCalendarListed";
+import { VetFrontPage } from "./js/views/VetFrontPage";
+import { VetClinicalRecords } from "./js/views/VetClinicalRecords";
 
 export default function App() {
   return (
