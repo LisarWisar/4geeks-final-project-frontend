@@ -11,24 +11,38 @@ export const Login = () => {
             <label>Email</label>
             <input type="text" placeholder="email" onChange={(e) => setEmail(e.target.value)}></input><br></br>
             <label>Password</label>
-            <input type="text" placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
-            <button onClick={ () => {
-                let data = getData()
-                console.log("data: ", data)
+            <input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
+            <button onClick={ async () => {
+                let response = await Validate_user({"email": email, "password": password})
+                console.log("respuesta: ", response)
+                /*if (response.ok)
+                /*    navigate("/vet")
+                /*else
+                /*    console.log("Invalid user or password")*/
             }}>Login</button>
         </div>
     )
 }
 
-const getData = async () => {
-    const response = await fetch('/');
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data)
-        return data;
-    } else {
-        console.log('error: ', response.status, response.statusText);
-        /* Handle the error returned by the HTTP request */
-        return {error: {status: response.status, statusText: response.statusText}};
-    };
+async function Validate_user (credentials) {
+    await fetch('http://localhost:5007/login', {
+        method: "POST",
+        body: JSON.stringify(credentials),
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+    })
+    .then (response => {
+        console.log(response.ok);
+        console.log(response.status);
+        console.log(response.text);
+        return response.json()
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
 };
