@@ -42,14 +42,14 @@ export const VetFrontPage = () => {
                         <div className="row py-3">
                             <div className="col-2 appointmentCardDate d-flex flex-column align-items-center py-1">
                                 <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
-                                <p className="d-flex justify-content-center p-0 m-0">14:00</p>
+                                <p className="d-flex justify-content-center p-0 m-0">{appointments.time}</p>
                             </div>
                             <div className="col-10 appointmentCardInfo py-2">
                                 <div className="row">
-                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.vet_id}</div>
+                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
-                                    <div className="col-6 px-3 py-2">Species: {appointment.pet_id} </div>
-                                    <div className="col-6 px-3 py-2">Breed: {appointment.pet_id}</div>
+                                    <div className="col-6 px-3 py-2">Species: {appointment.species} </div>
+                                    <div className="col-6 px-3 py-2">Breed: {appointment.breed}</div>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ export const VetFrontPage = () => {
 
     /* return VIEW function */
     return(
-    <div>
+    <div className="bg-white">
         <Navbar />
         <div className="vetBodyDiv">
             <div className="container-fluid">
@@ -85,8 +85,21 @@ export const VetFrontPage = () => {
                     </div>
                     <div className="col-8 vetPreviewCard my-4">
                         <div className="row">
-                            <div className="col-3"></div>
-                            <div className="col-9"></div>
+                            <div className="col-3">Hola</div>
+                            <div className="col-9">
+                                <div className="row">
+                                    <div className="col-6">Name:</div>
+                                    <div className="col-6">Species:</div>
+                                    <div className="col-6">Date of birth:</div>
+                                    <div className="col-6">Age:</div>
+                                    <div className="col-6">Color:</div>
+                                    <div className="col-6">Owner:</div>
+                                    <div className="col-6">Sterilized</div>
+                                    <div className="col-6">Weight:</div>
+                                    <div className="col-6">Breed:</div>
+                                    <div className="col-6">Allergies:</div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

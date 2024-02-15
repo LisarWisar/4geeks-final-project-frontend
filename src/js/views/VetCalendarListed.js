@@ -70,10 +70,10 @@ export const VetCalendarListed = () => {
                             </div>
                             <div className="col-10 appointmentCardInfo py-2">
                                 <div className="row">
-                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.vet_id}</div>
+                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
-                                    <div className="col-6 px-3 py-2">Species: {appointment.pet_id} </div>
-                                    <div className="col-6 px-3 py-2">Breed: {appointment.pet_id}</div>
+                                    <div className="col-6 px-3 py-2">Species: {appointment.species} </div>
+                                    <div className="col-6 px-3 py-2">Breed: {appointment.breed}</div>
                                 </div>
                             </div>
                         </div>
