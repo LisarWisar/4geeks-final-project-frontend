@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const VetCalendarListed = () => {
 
+    const navigate = useNavigate()
     const [appointmentsDataLength, setAppointmentsDataLength] = useState();
     const [appointmentsNumberOfPages, setAppointmentsNumberOfPages] = useState()
     const [appointmentsDict, setAppointmentsDict] = useState();
@@ -57,7 +58,6 @@ export const VetCalendarListed = () => {
         for (let i = 0; i<appointmentsDataLength; i++){
             appointments.push(appointmentsDict[i])
         }
-        console.log("data :", appointments)
 
         return(
             appointments.map(appointment => (
@@ -66,14 +66,14 @@ export const VetCalendarListed = () => {
                         <div className="row py-3">
                             <div className="col-2 appointmentCardDate d-flex flex-column align-items-center py-1">
                                 <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
-                                <p className="d-flex justify-content-center p-0 m-0">14:00</p>
+                                <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                             </div>
                             <div className="col-10 appointmentCardInfo py-2">
                                 <div className="row">
-                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.vet_id}</div>
+                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
-                                    <div className="col-6 px-3 py-2">Species: {appointment.pet_id} </div>
-                                    <div className="col-6 px-3 py-2">Breed: {appointment.pet_id}</div>
+                                    <div className="col-6 px-3 py-2">Species: {appointment.species} </div>
+                                    <div className="col-6 px-3 py-2">Breed: {appointment.breed}</div>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ export const VetCalendarListed = () => {
                 <div className="container-fluid">
                     <div className="row align-items-end pt-5">
                         <div className="col-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign createAppointmentButtonWidth">Create new appointment</button>
+                            <button className="vetBodyButtonDesign createAppointmentButtonWidth" onClick={() => {navigate("/vet/calendar/create-appointment")}}>Create new appointment</button>
                         </div>
                         <div className="col-4 d-flex justify-content-center">
                             <div className="vetBodyTitleDesign d-flex justify-content-center">
