@@ -38,7 +38,7 @@ export const Home = () => {
         <OurClients
         image='4'/>
         </div>
-        <div className="col">
+        <div className="col">gi
         <OurClients
         image='5'/>
         </div>
