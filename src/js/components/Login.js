@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
-import "../../styles/log-in.css";
+import "../log-in.css";
 
 
 export const Login = () => {
@@ -8,36 +8,7 @@ export const Login = () => {
     const [password, setPassword] = useState();
     const navigate = useNavigate()
 
-    const handleClick = () => {
-      console.log(email, password)
-      const login = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          "email": email,
-          "password": password
-
-        })
-      }
-      fetch('http://localhost:5007/login', login)
-      .then(resp =>{
-        //console.log(resp)
-        //if(resp.status === 200) return resp.json();
-        //else alert("There has been some error");
-        return(resp.json())
-      })
-
-      .then(data =>{
-        console.log(data)
-      })
-      .catch(error => {
-        console.error("There was an error", error);
-      })
-    }
     return(
-
 <div className="center">
     <ul className="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
       <li>
@@ -56,13 +27,13 @@ export const Login = () => {
         </button>
       </li>
     </ul>
-    <div className="form-signin w-100 m-auto">
-    <div>
+    <main className="form-signin w-100 m-auto">
+    <form>
     
       <div className="icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-          <path fillRule="evenodd"
+          <path fill-rule="evenodd"
             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
         </svg>
       </div>
@@ -76,17 +47,19 @@ export const Login = () => {
         <label>Password</label>
       </div>
       <div className="button-login">
-        <button className="w-100 py-2" type="submit"  onClick= {() => handleClick()}>Access </button>
+        <button className="w-100 py-2" type="submit"  onClick={() => {navigate("/vet")
+        }}>Access </button>
         <div className="forgot">
-        <p>I forgot my password</p><br></br>
-        <p>Don't have an account?</p><br></br>
+        <a>I forgot my password</a><br></br>
+        <a>Don't have an account?</a><br></br>
         <button type="submit"  onClick={() => {navigate("/Register")
-        }} >Create account</button>
+        }}>Create account</button>
       </div>
       </div>
-    </div>
-    </div>
+    </form>
+    </main>
     </div>
     )
 }
 
+     
