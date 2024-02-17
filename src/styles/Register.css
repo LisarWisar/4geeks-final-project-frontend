@@ -1,0 +1,14 @@
+.center{
+    background-color: white;
+    max-width: 700px;
+    width: 100%;
+}
+
+.Register{
+    color:#009FB7;
+    text-align: center;
+  }
+  .fullname[type="email"] {
+    margin-bottom: -1px;
+    background-color: rgb(203, 233, 248);
+  }

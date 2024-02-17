@@ -1,8 +1,17 @@
-import React from 'react'
-import "../Register.css";
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import "../../styles/Register.css";
 
 
 export const Register = () => {
+
+    const [name, setName] = useState();
+    const [emailAddress, setEmailAddress] = useState();
+    const [password, setPassword] = useState();
+    const [confirmPassword, seteConfirmPassword] = useState();
+    const [address, setAddress] = useState();
+
+    const navigate = useNavigate()
   
     return (
 
@@ -11,19 +20,19 @@ export const Register = () => {
                 <div className="icon">
 
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    <path fill-rule="evenodd"
+                    <path fillRule="evenodd"
                         d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                 </div>
                 <div>
-                    <h1 className="Sign">Register</h1>
+                    <h1 className="Register">Register</h1>
                     <div className="row">
                         <div className="col-6">
-                            <label for="exampleInputEmail1" className="form-label">Full name</label>
+                            <label for="exampleInputEmail1" className="fullname">Full name</label>
                             <input type="email" className="form-control" placeholder="Enter your full name"/>
                         </div>
                         <div className="col-6">
 
-                            <label for="exampleInputEmail1" className="form-label">Email address</label>
+                            <label for="exampleInputEmail1" className="email">Email address</label>
                             <input type="email" className="form-control" placeholder="Enter your email"/>
                         </div>
                     </div>

@@ -2,24 +2,23 @@ import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
 
+export const VetClinicalRecords = () => {
 
-export const VetCalendarListed = () => {
-
-    const [appointmentsDataLength, setAppointmentsDataLength] = useState();
-    const [appointmentsNumberOfPages, setAppointmentsNumberOfPages] = useState()
-    const [appointmentsDict, setAppointmentsDict] = useState();
+    const [clinicalRecordsDataLength, setClinicalRecordsDataLength] = useState();
+    const [clinicalRecordsNumberOfPages, setClinicalRecordsNumberOfPages] = useState()
+    const [clinicalRecordsDict, setClinicalRecordsDict] = useState();
     /*const [appointmentsPage, setAppointmentsPage] = useState(); Will use later for pagination*/
 
-    async function GetAppointments () {
-        await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
+    async function GetClinicalRecords () {
+        await fetch('http://localhost:5007/vet/clinical-records', {method: "GET",})
         .then (response => {
             return response.json();
         })
         .then(data => {
             let page = getPages(data.data.length);
-            setAppointmentsNumberOfPages(page);
-            setAppointmentsDataLength(data.data.length);
-            setAppointmentsDict(data.data);
+            setClinicalRecordsNumberOfPages(page);
+            setClinicalRecordsDataLength(data.data.length);
+            setClinicalRecordsDict(data.data);
         })
         .catch(error => {
             console.log(error);
@@ -27,18 +26,17 @@ export const VetCalendarListed = () => {
     }
 
     useEffect(() => {
-        GetAppointments()
+        GetClinicalRecords()
       }, []);
 
     function Pagination () {
 
-        let numberOfPages = Math.min(10, appointmentsNumberOfPages);
+        let numberOfPages = Math.min(10, clinicalRecordsNumberOfPages);
     
         let pagination = []
         for (let i = 0; i<numberOfPages ; i++){
             pagination.push(i+1);
         }
-    
         return(
             <div className="d-flex justify-content-center pt-3 pb-3">
                 <button className="paginationButtons">&lt;&lt;First</button>
@@ -51,29 +49,29 @@ export const VetCalendarListed = () => {
              
             );
     }
-
-    function AppointmentCards () {
-        let appointments = []
-        for (let i = 0; i<appointmentsDataLength; i++){
-            appointments.push(appointmentsDict[i])
+    function ClinicalRecordsCards () {
+        let clinicalRecords = []
+        for (let i = 0; i<clinicalRecordsDataLength; i++){
+            clinicalRecords.push(clinicalRecordsDict[i])
         }
-        console.log("data :", appointments)
 
         return(
-            appointments.map(appointment => (
+            clinicalRecords.map(record => (
                 <div>
                     <div className="container-fluid">
-                        <div className="row py-3">
-                            <div className="col-2 appointmentCardDate d-flex flex-column align-items-center py-1">
-                                <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
-                                <p className="d-flex justify-content-center p-0 m-0">14:00</p>
+                        <div className="py-3 d-flex">
+                            <div className="appointmentCardDate">
+                                <div className="ratio ratio-1x1">
+                                    <img src={record.image}></img>
+                                </div>
                             </div>
-                            <div className="col-10 appointmentCardInfo py-2">
+                            <div className="appointmentCardInfo py-2">
                                 <div className="row">
-                                    <div className="col-6 px-3 py-2">Veterinarian: {appointment.vet_id}</div>
-                                    <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
-                                    <div className="col-6 px-3 py-2">Species: {appointment.pet_id} </div>
-                                    <div className="col-6 px-3 py-2">Breed: {appointment.pet_id}</div>
+                                    <div className="col-4 px-3 py-2">Species: {record?.species}</div>
+                                    <div className="col-4 px-3 py-2">Age: {record?.age} years old</div>
+                                    <div className="col-4 px-3 py-2">Color: {record?.color} </div>
+                                    <div className="col-4 px-3 py-2">Name: {record?.name}</div>
+                                    <div className="col-4 px-3 py-2">Owner: {record?.owner}</div>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +80,7 @@ export const VetCalendarListed = () => {
         )
     }
 
-    /* return VIEW function*/
+
     return(
         <div>
             <Navbar />
@@ -90,11 +88,11 @@ export const VetCalendarListed = () => {
                 <div className="container-fluid">
                     <div className="row align-items-end pt-5">
                         <div className="col-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign createAppointmentButtonWidth">Create new appointment</button>
+                            <button className="vetBodyButtonDesign createAppointmentButtonWidth">Create new clincal record</button>
                         </div>
                         <div className="col-4 d-flex justify-content-center">
                             <div className="vetBodyTitleDesign d-flex justify-content-center">
-                                <p>Appointments</p>
+                                <p>Clinical records</p>
                             </div>
                         </div>
                         <div className="col-4 d-flex justify-content-center">
@@ -103,15 +101,11 @@ export const VetCalendarListed = () => {
                     </div>
                 </div>
                 <Pagination />
-                <div className="d-flex justify-content-between align-items-center calendarListedDayDivider">
-                    <p className="calendarListedDay">Thursday 25</p>
-                    <p className="calendarListedMonth">January</p>
-                </div>
-                <AppointmentCards />
+                <ClinicalRecordsCards />
                 <Pagination />
             </div>
         </div>
-    );
+    )
 }
 
 function getPages(numberOfAppointments) {
