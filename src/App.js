@@ -9,6 +9,7 @@ import { ContactUs } from "./js/components/ContactUs";
 import { VetCalendarListed } from "./js/views/VetCalendarListed.js";
 import { VetFrontPage } from "./js/views/VetFrontPage";
 import { VetClinicalRecords } from "./js/views/VetClinicalRecords";
+import { VetCreateAppointment } from "./js/views/VetCreateAppointment.js";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/vet" element={<VetFrontPage />} />
           <Route path="/vet/calendar" element={<VetCalendarListed />} />
           <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
+          <Route path ="/vet/calendar/create-new-appointment" element={<VetCreateAppointment />} />
           <Route path="/about" element={<About />} />
           <Route path="/missionAndVission" element={<MissionAndVission/>} />
           <Route path="/contactUs" element={<ContactUs />} />
