@@ -1,14 +1,50 @@
-.center{
-    background-color: white;
-    max-width: 700px;
-    width: 100%;
-}
 
 .Register{
     color:#009FB7;
     text-align: center;
   }
-  .fullname[type="email"] {
-    margin-bottom: -1px;
+  .form-register input[type="name"] {
+    margin: auto;
     background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
   }
+  .form-register input[type="email"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+  }
+  .form-register input[type="password"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .form-register input[type="password"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .form-register input[type="text"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .form-register input[type="tel"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .form-register input[type="tel"] {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+

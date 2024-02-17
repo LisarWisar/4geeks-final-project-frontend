@@ -1,9 +1,3 @@
-html,
-body {
-  height: 100%;
-  background-color : rgb(203, 233, 248);
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
 .form-signin {
   max-width: 330px;

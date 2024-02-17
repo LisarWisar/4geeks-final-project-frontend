@@ -1,5 +1,8 @@
 import React, { useState, useEffect} from 'react';
+import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
 import "../../styles/log-in.css";
 
 
@@ -37,34 +40,12 @@ export const Login = () => {
       })
     }
     return(
-
+<div> <Navbar />
 <div className="center">
-    <ul className="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-        </button>
-      </li>
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-        </button>
-      </li>
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true">
-        </button>
-      </li>
-    </ul>
     <div className="form-signin w-100 m-auto">
     <div>
-    
-      <div className="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-          <path fillRule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-        </svg>
+      <div className="icon" >
+        <FontAwesomeIcon icon={faUser}/>
       </div>
       <h1 className="Sign">Login</h1>
       <div className="form-floating">
@@ -84,6 +65,7 @@ export const Login = () => {
         }} >Create account</button>
       </div>
       </div>
+    </div>
     </div>
     </div>
     </div>
