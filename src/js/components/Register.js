@@ -2,7 +2,6 @@ import React, { useState, useNavigate } from 'react'
 import { Navbar } from '../components/Navbar';
 import "../../styles/Register.css";
 
-
 export const Register = () => {
 //Data of new user
     const [name, setName] = useState();

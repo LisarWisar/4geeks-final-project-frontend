@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import "../../styles/log-in.css";
 
-
 export const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
