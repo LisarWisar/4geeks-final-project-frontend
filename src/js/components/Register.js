@@ -94,7 +94,7 @@ export const Register = () => {
                                 </div>
                             </div>
                             <div className='access'>
-                            <button className="w-50 py-1" type="submit">Access</button>
+                            <button className="access" type="submit">Access</button>
                             </div>
                             <div className="forgot">
                                 <a>I forgot my password</a><br></br>

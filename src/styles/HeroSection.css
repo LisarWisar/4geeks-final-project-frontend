@@ -1,15 +1,24 @@
- .hero-container{
-  width: 100%;
-  height: 100%;
-  position:relative
-   }
-.hero-text{
-  color: white;
-  border-style:dotted;
-  position: absolute;
-  top: 90%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+
+  #img-hero{
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+    z-index: -1;
+
+  }
+ .hero-text{
+  color: #BE928F;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  margin-left:  200px;
+  transform: translate(-5%, -5%);
+  top: 10px;
+  left: 10px;
 }
 
+@media screen and (max-width: 555px){
+  .hero-text h1{
+    font-size: 1.1rem;
+    padding: 0 0 2rem 0;
+  }
+}

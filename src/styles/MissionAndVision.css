@@ -1,0 +1,26 @@
+.title-mission{
+    border-radius:10px;
+    text-align: center;
+    margin: auto;
+    width: 25rem;
+    background-color: #D4B2AD;
+    border: 100px;
+}
+#conten{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container-all h2{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container-all p{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+#pad{
+    padding-left: 10px;
+}

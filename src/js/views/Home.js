@@ -3,7 +3,7 @@ import TopNavbar from "../components/TopNavbar.js";
 import BottomNavbar from "../components/BottomNavbar.js";
 import HeroSection from "../components/HeroSection.js";
 import About from "../components/About.js";
-import MissionAndVission from "../components/MissionAndVission.js";
+import MissionAndVision from "../components/MissionAndVision.js";
 import ContactUs from "../components/ContactUs.js";
 import OurClients from "../components/OurClients.js";
 
@@ -15,7 +15,7 @@ export const Home = () => {
         <TopNavbar />
         <HeroSection/>
         <About/>
-        <MissionAndVission/>
+        <MissionAndVision/>
        {/* Images of our clients 3 */}
 <div className="container">
  <div className="row">
@@ -38,7 +38,7 @@ export const Home = () => {
         <OurClients
         image='4'/>
         </div>
-        <div className="col">gi
+        <div className="col">
         <OurClients
         image='5'/>
         </div>
