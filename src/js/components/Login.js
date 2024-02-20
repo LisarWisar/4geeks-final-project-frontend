@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
-import "../log-in.css";
+import "../../styles/log-in.css";
 
 
 export const Login = () => {
