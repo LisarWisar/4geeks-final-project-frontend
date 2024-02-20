@@ -10,8 +10,7 @@ const navigate = useNavigate()
 const [menuOpen, setMenuOpen] = useState(false)
     return (
       <nav>
-      <Link><img src="https://i.pinimg.com/736x/da/6b/70/da6b7032661b3b91fcca1d3c1550bf0a.jpg" width="40" alt="Doolittles"/></Link>
-
+      <div className="doolittles"><img id="logo-img" src="https://t4.ftcdn.net/jpg/04/17/87/67/360_F_417876741_pofg19rDWTv6ZmgQ8qTOgVMJ0H3N2uPh.jpg" width="55" alt="Doolittles"/><h1 >Doolittles</h1></div>
       <div className="menu" onClick={() =>{
         setMenuOpen(!menuOpen)
       }}>

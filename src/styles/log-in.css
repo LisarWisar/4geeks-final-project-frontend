@@ -1,9 +1,3 @@
-html,
-body {
-  height: 100%;
-  background-color : white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
 .form-signin {
   max-width: 330px;
@@ -29,8 +23,9 @@ button{
   text-align: center;
 }
 
-.icon{
-  text-align: center  ;
+.icon-log{
+  text-align: center;
+
 }
 
 .center{
