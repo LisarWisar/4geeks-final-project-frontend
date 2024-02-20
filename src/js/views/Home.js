@@ -6,6 +6,7 @@ import About from "../components/About.js";
 import MissionAndVision from "../components/MissionAndVision.js";
 import ContactUs from "../components/ContactUs.js";
 import OurClients from "../components/OurClients.js";
+import CalendarViewSpecific from "./CalendarViewSpecific.js";
 
 
 export const Home = () => {

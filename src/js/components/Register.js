@@ -1,4 +1,5 @@
 import React, { useState, useNavigate } from 'react'
+import {Toaster, toast} from "react-hot-toast"
 import { Navbar } from '../components/Navbar';
 import "../../styles/Register.css";
 
@@ -11,6 +12,8 @@ export const Register = () => {
     const [address, setAddress] = useState();
     const [phone, setPhone] = useState();
     const [rut, setRut] = useState();
+
+  /*   const navigate = useNavigate(); */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,10 +42,13 @@ export const Register = () => {
             return response.json();
         })
         .then(data =>{
-            console.log("User registered", data);
+            toast.success("Registered successfully")
+            console.log("Registered successfully", data);
+  /*           navigate("/login") */
         })
         .catch(error =>{
         //ERROR
+            toast.error("Failed :" +error.message);
             console.error(error)
         })
         }
@@ -60,7 +66,7 @@ export const Register = () => {
                             <h1 className="Register">Register</h1>       
                             <div className="row">
                                 <div className="col-6">
-                                    <label className="fullname">Full name</label>
+                                    <label className="fullname">Full name{/* <span>*</span> */}</label>
                                     <input value={name} onChange={e => setName(e.target.value)} type="name"  />
                                 </div>
                                 <div className="col-6">
@@ -94,7 +100,7 @@ export const Register = () => {
                                 </div>
                             </div>
                             <div className='access'>
-                            <button className="access" type="submit">Access</button>
+                            <button className="access-b" type="submit">Access</button>
                             </div>
                             <div className="forgot">
                                 <a>I forgot my password</a><br></br>

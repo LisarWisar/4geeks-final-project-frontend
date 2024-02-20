@@ -1,0 +1,54 @@
+.vetBodyCalendar {
+    padding-left: 500px;
+    padding-right: 500px;
+    background: white;
+  }
+  
+  
+.calendarView {
+    border: 1px black solid;
+    background-color: #E3F2FD;
+    font-weight: 500;
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+  }
+
+.date-info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+.text-area{
+    padding: 30px 30px 30px;
+    margin: auto;
+    font-weight: bold;
+}
+
+.text-area textarea{
+    width: 100%;
+    height: 100px;
+    padding-right: 5px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+textarea:is(:focus, :valid){
+    border-color: black
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
+#image-pet{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#data.pet{
+    padding-left: 100px;
+    text-align:end
+}

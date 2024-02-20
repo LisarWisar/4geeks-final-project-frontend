@@ -33,6 +33,8 @@
     background-color: rgb(203, 233, 248);
     border-radius: 10px;
     padding: 5px;
+align-items: center;
+margin-left: 10px;
   }
   .form-register input[type="tel"] {
     margin-bottom: 10px;
@@ -46,4 +48,12 @@
     border-radius: 10px;
     padding: 5px;
   }
+.form-register{
+  align-items: center;
+}
+.access-b{
+margin-left: 150px;
+width: 100px;
+height: 40px;
 
+}
