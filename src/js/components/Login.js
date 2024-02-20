@@ -1,11 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-=======
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
->>>>>>> bf373ff5e09e6759246fea99c9b8aef4a4cb517b
 import "../../styles/log-in.css";
 
 
