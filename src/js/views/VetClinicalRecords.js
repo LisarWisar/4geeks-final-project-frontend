@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export const VetClinicalRecords = () => {
 
+    const navigate = useNavigate()
     const [clinicalRecordsDataLength, setClinicalRecordsDataLength] = useState();
     const [clinicalRecordsNumberOfPages, setClinicalRecordsNumberOfPages] = useState()
     const [clinicalRecordsDict, setClinicalRecordsDict] = useState();
@@ -61,18 +62,21 @@ export const VetClinicalRecords = () => {
                     <div className="container-fluid">
                         <div className="py-3 d-flex">
                             <div className="appointmentCardDate">
-                                <div className="ratio ratio-1x1">
-                                    <img src={record.image}></img>
-                                </div>
+                                    <div className="ratio ratio-1x1">
+                                        <img src={record.image}></img>
+                                    </div>
                             </div>
                             <div className="appointmentCardInfo py-2">
-                                <div className="row">
-                                    <div className="col-4 px-3 py-2">Species: {record?.species}</div>
-                                    <div className="col-4 px-3 py-2">Age: {record?.age} years old</div>
-                                    <div className="col-4 px-3 py-2">Color: {record?.color} </div>
-                                    <div className="col-4 px-3 py-2">Name: {record?.name}</div>
-                                    <div className="col-4 px-3 py-2">Owner: {record?.owner}</div>
-                                </div>
+                                    <div className="row">
+                                        <div className="col-4 px-3 py-2">Species: {record?.species}</div>
+                                        <div className="col-4 px-3 py-2">Age: {record?.age} years old</div>
+                                        <div className="col-4 px-3 py-2">Color: {record?.color} </div>
+                                        <div className="col-4 px-3 py-2">Name: {record?.name}</div>
+                                        <div className="col-4 px-3 py-2">Owner: {record?.owner}</div>
+                                        <div className="col-4 px-3 py-2 d-flex justify-content-end">
+                                            <button className="mx-5" onClick={() => {navigate("/vet/calendar/appointment")}}>See appointment</button>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +84,7 @@ export const VetClinicalRecords = () => {
         )
     }
 
-
+    /* return export funcion */
     return(
         <div>
             <Navbar />

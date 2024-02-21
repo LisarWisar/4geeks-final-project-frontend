@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/vet" element={<VetFrontPage />} />
           <Route path="/vet/calendar" element={<VetCalendarListed />} />
           <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
-          <Route path ="/vet/calendar/create-new-appointment" element={<VetCreateAppointment />} />
+          <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
           <Route path="/about" element={<About />} />
           <Route path="/missionAndVision" element={<MissionAndVision/>} />
           <Route path="/contactUs" element={<ContactUs />} />
