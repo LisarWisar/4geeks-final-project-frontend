@@ -11,7 +11,7 @@ export const Login = () => {
     const [password, setPassword] = useState();
     const navigate = useNavigate()
   
-    const handleClick = () => {
+    const handleClick = async () => {
       console.log(email, password)
       const login = {
         method: "POST",
@@ -24,7 +24,7 @@ export const Login = () => {
 
         })
       }
-      fetch('http://localhost:5007/login', login)
+         await fetch('http://localhost:5007/login', login)
       .then(resp =>{
 /*         console.log(resp)
         if(resp.status === 200) return resp.json();

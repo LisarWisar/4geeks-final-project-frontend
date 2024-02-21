@@ -1,11 +1,10 @@
-.vetBodyCalendar {
+.petBody {
     padding-left: 500px;
     padding-right: 500px;
     background: white;
   }
   
-  
-.calendarView {
+  .pet-card {
     border: 1px black solid;
     background-color: #E3F2FD;
     font-weight: 500;
@@ -13,7 +12,7 @@
     font-family: 'Inter', sans-serif;
   }
 
-.date-info{
+  .date-info{
     display: flex;
     justify-content: center;
     text-align: center;
