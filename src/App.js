@@ -12,6 +12,7 @@ import { VetClinicalRecords } from "./js/views/VetClinicalRecords";
 import { VetCreateAppointment } from "./js/views/VetCreateAppointment.js";
 import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
 import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
+import { UserFrontPage } from "./js/views/UserFrontPage.js";
 
 export default function App() {
   return (
@@ -29,7 +30,7 @@ export default function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/vet/patiens" element={<PatientsClinicalRecordS/>} />
+          <Route path="/vet/patiens/:id" element={<PatientsClinicalRecordS/>} />
           <Route path="/vet/calendar-view" element={<CalendarViewSpecific/>} />
           
           <Route render={() => <h1>Not found!</h1>} />

@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import "../../styles/PatientsClinicalRecordS.css";
 
 export const PatientsClinicalRecordS = () => {
+
+   const [patients, setPatients] = useState([]);
+   let {id} = useParams() 
+   console.log("mensaje",id)
+    const initialUrl = "http://localhost:5007/vet/clinical-records-specific/" + id;
+
+    const requestFetch = (url) => {
+        fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error))
+    };
+
+    useEffect(()=> {
+      requestFetch(initialUrl);
+    }, [])
+ 
+
+
+
   return (
     <>
           <div className='tittle-pet'>
