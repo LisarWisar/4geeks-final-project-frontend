@@ -7,7 +7,7 @@ import { About } from "./js/components/About";
 import { MissionAndVision } from "./js/components/MissionAndVision";
 import { ContactUs } from "./js/components/ContactUs";
 import { VetCalendarListed } from "./js/views/VetCalendarListed.js";
-import { VetFrontPage } from "./js/views/VetFrontPage";
+import { VetFrontPage } from "./js/views/VetFrontPage"; 
 import { VetClinicalRecords } from "./js/views/VetClinicalRecords";
 import { VetCreateAppointment } from "./js/views/VetCreateAppointment.js";
 import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
@@ -23,6 +23,7 @@ export default function App() {
           <Route path="/vet/calendar" element={<VetCalendarListed />} />
           <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
           <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
+          <Route path ="/user" element={<UserFrontPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/missionAndVision" element={<MissionAndVision/>} />
           <Route path="/contactUs" element={<ContactUs />} />

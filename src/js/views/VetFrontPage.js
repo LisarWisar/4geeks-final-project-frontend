@@ -73,7 +73,7 @@ export const VetFrontPage = () => {
 
     /* return VIEW function */
     return(
-    <div className="bg-white">
+    <div>
         <Navbar />
         <div className="vetBodyDiv">
             <div className="container-fluid">

@@ -9,6 +9,7 @@ import "../../styles/log-in.css";
 export const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [accountRole, setAccountRole] = useState();
     const navigate = useNavigate()
   
     const handleClick = async () => {
@@ -33,11 +34,21 @@ export const Login = () => {
       })
 
       .then(data =>{
-        console.log(data)
+        setAccountRole(data?.role)
       })
       .catch(error => {
         console.error("There was an error", error);
       })
+
+      if (accountRole == "user"){
+        navigate("/user")
+      }
+      else if (accountRole == "veterinarian"){
+        navigate("/vet")
+      }
+      else{
+        console.log("There was an error")
+      }
     }
     return(
 <div> <Navbar />
