@@ -17,6 +17,8 @@ nav{
 
  nav ul {
     display: flex;
+    margin-top: 10px;
+    font-size: 1.2rem;
  }
 
  nav ul li {
@@ -34,10 +36,6 @@ nav{
  nav ul li a:hover{
     background-color: rgb(173, 240, 247);
  }
-.logo{
-    width: 10px;
-    height: 10px;
-}
 nav .menu{
     display: none;
     position: absolute;
@@ -82,8 +80,23 @@ nav .menu span{
         margin: 0.2rem 0.5rem
     }
 }
-img{
-    border-radius: 10px;
+#logo-img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
+.title-nav{
+    justify-content: flex-start;
+}
+
+
+.doolittles{
+    display: flex;
+    justify-self: baseline;
+    font-family:monospace;
+}
 

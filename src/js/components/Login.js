@@ -1,41 +1,62 @@
 import React, { useState, useEffect} from 'react';
+import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
-import "../log-in.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import "../../styles/log-in.css";
 
 
 export const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [accountRole, setAccountRole] = useState();
     const navigate = useNavigate()
+  
+    const handleClick  = () => {
+      console.log(email, password)
+      const login = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "email": email,
+          "password": password
 
+        })
+      }
+      fetch('http://localhost:5007/login', login)
+      .then(resp =>{
+/*         console.log(resp)
+        if(resp.status === 200) return resp.json();
+        else alert("There has been some error"); */
+        return(resp.json())
+      })
+
+      .then(data =>{
+        setAccountRole(data?.role)
+      })
+      .catch(error => {
+        console.error("There was an error", error);
+      })
+
+      if (accountRole == "user"){
+        navigate("/user")
+      }
+      else if (accountRole == "veterinarian"){
+        navigate("/vet")
+      }
+      else{
+        console.log("There was an error")
+      }
+    }
     return(
+<div> <Navbar />
 <div className="center">
-    <ul className="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-        </button>
-      </li>
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-        </button>
-      </li>
-      <li>
-        <button type="button" className="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true">
-        </button>
-      </li>
-    </ul>
-    <main className="form-signin w-100 m-auto">
-    <form>
-    
-      <div className="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-          <path fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-        </svg>
+    <div className="form-signin w-100 m-auto">
+    <div>
+      <div className="icon-log" >
+        <FontAwesomeIcon icon={faUser}/>
       </div>
       <h1 className="Sign">Login</h1>
       <div className="form-floating">
@@ -47,8 +68,7 @@ export const Login = () => {
         <label>Password</label>
       </div>
       <div className="button-login">
-        <button className="w-100 py-2" type="submit"  onClick={() => {navigate("/vet")
-        }}>Access </button>
+      <button className="w-100 py-2" type="submit"  onClick= {() => handleClick()}>Access </button>
         <div className="forgot">
         <a>I forgot my password</a><br></br>
         <a>Don't have an account?</a><br></br>
@@ -56,9 +76,11 @@ export const Login = () => {
         }}>Create account</button>
       </div>
       </div>
-    </form>
-    </main>
     </div>
+    </div>
+    </div>
+    </div>
+    
     )
 }
 
