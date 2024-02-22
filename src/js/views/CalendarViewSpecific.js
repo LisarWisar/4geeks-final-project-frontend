@@ -1,16 +1,17 @@
 import React from 'react'
 import "../../styles/CalendarViewSpecific.css";
+import about from "../images/about.jpg";
 
 export const CalendarViewSpecific = () => {
   return (
     <>
     <div>CalendarViewSpecific</div>
     
-    <div className="vetBodyCalendar">
+    <div className="petBody">
     <div className="d-flex justify-content-center">
     
                     </div>
-                    <div className="col-8 calendarView my-4 py-5">
+                    <div className="col-8 pet-card my-4 py-5">
                         <div className="row">
                             <div className="col-9">
                                 <div className="date-info">
@@ -25,11 +26,11 @@ export const CalendarViewSpecific = () => {
                             </div>
                             </div>
                         </div>
-                    <div className="col-8 calendarView my-4 py-5">
+                    <div className="col-8 pet-card my-4 py-5">
                         
                             <div className="col-3">
                                 <div className="ratio ratio-1x1" id="image-pet">
-                                    <img /*  src= {calendar} */></img>
+                                    <img  src= { about } alt='calendar-img'></img>
                                 </div>
                             </div>
                             
@@ -46,11 +47,8 @@ export const CalendarViewSpecific = () => {
                                     <p>Aditional Information</p>
                                     <textarea  placeholder='Type here..'/>
                                     </div>
-      </div>
-                                    
                                     </div>
-
-                                
+                                    </div>
                             </div>
                             </div>
                         </div>

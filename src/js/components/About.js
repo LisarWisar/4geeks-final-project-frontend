@@ -13,7 +13,7 @@ export const About = () => {
     </div>
     <section className='about'>
       <div className='main'>
-        <img  className="about-image" src={ imageAbout}/>
+        <img  className="about-image" src={ imageAbout }/>
         <div className="all-text">
         <h1>Welcome to Doolittles</h1>
        <p>
