@@ -74,7 +74,7 @@ export const VetClinicalRecords = () => {
                                         <div className="col-4 px-3 py-2">Name: {record?.name}</div>
                                         <div className="col-4 px-3 py-2">Owner: {record?.owner}</div>
                                         <div className="col-4 px-3 py-2 d-flex justify-content-end">
-                                            <button className="mx-5" onClick={() => {navigate("/vet/calendar/appointment")}}>See appointment</button>
+                                            <button className="mx-5" onClick={() => {navigate(`/vet/clinical-records/${record.pet_id}`)}}>See more...</button>
                                         </div>
                                     </div>
                             </div>
