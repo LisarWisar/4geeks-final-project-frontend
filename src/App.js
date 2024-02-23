@@ -12,6 +12,7 @@ import { VetClinicalRecords } from "./js/views/VetClinicalRecords";
 import { VetCreateAppointment } from "./js/views/VetCreateAppointment.js";
 import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
 import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
+import { UserFrontPage } from "./js/views/UserFrontPage.js";
 
 export default function App() {
   return (
