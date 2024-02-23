@@ -61,7 +61,7 @@ export const UserFrontPage = () => {
                                     <div className="col-4 px-3 py-2">Species: {pet?.species}</div>
                                     <div className="col-4 px-3 py-2">Age: {pet?.age} years old</div>
                                     <div className="col-12 px-3 py-2 d-flex justify-content-end">
-                                        <button className="mx-5" onClick={() => {navigate("/user/pets")}}>See more..</button>
+                                        <button className="mx-5" onClick={() => {navigate(`/user/pets/${pet.pet_id}`)}}>See more..</button>
                                     </div>
                                 </div>
                             </div>
@@ -111,20 +111,20 @@ export const UserFrontPage = () => {
                         <div className="col-12 d-flex justify-content-center">
                                 <h3>Welcome {userData?.name}!</h3>
                         </div>
-                        <div className="col-8 vetPreviewCard my-4">
+                        <div className="col-8 vetPreviewCard my-4 p-4">
                             <p>Your pets</p>
                             <PetCards />
                             <div className="d-flex justify-content-center">
-                                <button>See all Pets</button>
+                                <button onClick={() => {navigate("/user/pets")}}>See all Pets</button>
                             </div>
                         </div>
-                        <div className="col-8 vetPreviewCard my-4">
-                        <p>Next appointments</p>
-                        <AppointmentCards />
-                        <div className="d-flex justify-content-center">
-                            <button>See full calendar</button>
+                        <div className="col-8 vetPreviewCard my-4 p-4">
+                            <p>Next appointments</p>
+                            <AppointmentCards />
+                            <div className="d-flex justify-content-center">
+                                <button onClick={() => {navigate("/user/calendar")}}>See full calendar</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
