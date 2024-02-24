@@ -2,7 +2,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
     return {
       store: {
-        patient: {}
+        patient: {},
+        petList: {}
       },
       actions: {
         getPatient: (id) => {
@@ -13,6 +14,14 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch(error => console.log(error))
             
         },
+        getUserPetList: (id) => {
+          const initlUrl = "http://localhost:5007/user/pet/" + id;
+              fetch(initlUrl)
+        .then(response => response.json())
+        .then(data => setStore({petList:data}))
+        .catch(error => console.log(error))
+          
+      }
       }
     }
   }

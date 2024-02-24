@@ -1,0 +1,32 @@
+.userPetList{
+    border: 1px black solid;
+    background-color: #E3F2FD;
+    font-weight: 700;
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card-box{
+    padding: 200px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .userPetListTitle p {
+    margin: auto;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    width: 300px;
+    background-color: #009fb7;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+  }
+
+  #data-pet-list{
+    font-size:2cap;
+    color: #BE928F;
+  }

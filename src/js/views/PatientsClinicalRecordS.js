@@ -6,7 +6,27 @@ import "../../styles/PatientsClinicalRecordS.css";
 export const PatientsClinicalRecordS = () => {
   const  { store, actions }= useContext(Context)
 
-   const [patients, setPatients] = useState([]);
+   const [values, setValues] = useState({
+    anamnesis: "",
+    drNotes: "",
+    aditionalInfo: "",
+   });
+
+   const handleInputChange = (event) => {
+    const { name, value } = event.target;
+      setValues({
+        ...values,
+        [name]: value,
+      });
+   };
+   
+    const handleForm = (event) => {
+      event.preventDefault()
+      console.log(values);
+    };
+      
+
+
    let {id} = useParams() 
    console.log("mensaje",id)
 
@@ -50,14 +70,16 @@ export const PatientsClinicalRecordS = () => {
         <input type="radio" name="gender" value="deceased" className='app-check'></input>
         <label>Inactive</label>
         </div>
-<div className='text-a'>
+<form action="" onSubmit={handleForm} className='text-a'>
 <p>Anamnesis</p>
-      <textarea className="area-text"  placeholder='Type here..'/><br/>
+      <textarea name="anamenesis" /* value={values.anamnesis} */ OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
       <p>Dr. Notes</p>
-      <textarea className="area-text"  placeholder='Type here..'/><br/>
+      <textarea name="drNotes" value={values.drNotes} OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
       <p>Aditional Information</p>
-      <textarea className="area-text"  placeholder='Type here..'/><br/>
-      </div>
+      <textarea name="aditionalInfo" value={values.aditionalInfo} OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
+
+      <button type="submit">Send data</button>
+      </form>
       </div>
       </div>
     </>
