@@ -6,10 +6,11 @@ import { useNavigate } from "react-router-dom";
 export const VetCalendarListed = () => {
 
     const navigate = useNavigate()
-    const [appointmentsDataLength, setAppointmentsDataLength] = useState();
+    const [appointmentsDataLength, setAppointmentsDataLength] = useState()
     const [appointmentsNumberOfPages, setAppointmentsNumberOfPages] = useState()
-    const [appointmentsDict, setAppointmentsDict] = useState();
-    /*const [appointmentsPage, setAppointmentsPage] = useState(); Will use later for pagination*/
+    const [appointmentsDict, setAppointmentsDict] = useState()
+    const [appointmentsPage, setAppointmentsPage] = useState(1)
+    const [maxCardsPerPage, setMaxCardsPerPage] = useState(1)  /*max ammount of cards shown per page*/
 
     async function GetAppointments () {
         await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
@@ -39,23 +40,37 @@ export const VetCalendarListed = () => {
         for (let i = 0; i<numberOfPages ; i++){
             pagination.push(i+1);
         }
-    
+        
+        let first_page = 1
+        let last_page = pagination[pagination.length-1]
+
         return(
             <div className="d-flex justify-content-center pt-3 pb-3">
-                <button className="paginationButtons">&lt;&lt;First</button>
-                <button className="paginationButtons">Prev</button>
+                <button onClick={() => {setAppointmentsPage(1)}} className="paginationButtons">&lt;&lt;First</button>
+                <button onClick={() => {setAppointmentsPage(Math.max(appointmentsPage-1,first_page))}} className="paginationButtons">Prev</button>
                 {pagination.map(page => (
-                    <button className="paginationButtons">{page}</button>))}
-                <button className="paginationButtons">Next</button>
-                <button className="paginationButtons">Last&gt;&gt;</button>
-            </div>
+                    <button onClick={() => {setAppointmentsPage(page)}} className="paginationButtons">{page}</button>
+                    ))}
+                    <button onClick={() => {setAppointmentsPage(Math.min(appointmentsPage+1, last_page))}} className="paginationButtons">Next</button>
+                    <button onClick={() => {setAppointmentsPage(last_page)}} className="paginationButtons">Last&gt;&gt;</button>
+                </div>
              
             );
     }
 
+    function getPages(numberOfAppointments) {
+        if (numberOfAppointments%maxCardsPerPage === 0){
+            return (numberOfAppointments/maxCardsPerPage);
+        }
+        else{
+            return (Math.trunc(numberOfAppointments/maxCardsPerPage)+1);
+        }}
+
     function AppointmentCards () {
         let appointments = []
-        for (let i = 0; i<appointmentsDataLength; i++){
+        let first_card = maxCardsPerPage*(appointmentsPage-1)
+        let last_card = maxCardsPerPage*appointmentsPage
+        for (let i = first_card; i<Math.min(last_card, appointmentsDataLength); i++){
             appointments.push(appointmentsDict[i])
         }
 
@@ -114,11 +129,3 @@ export const VetCalendarListed = () => {
     );
 }
 
-function getPages(numberOfAppointments) {
-    let maxCardsPerPage = 10;
-    if (numberOfAppointments%maxCardsPerPage === 0){
-        return (numberOfAppointments/maxCardsPerPage);
-    }
-    else{
-        return (Math.trunc(numberOfAppointments/maxCardsPerPage)+1);
-    }}
