@@ -34,6 +34,7 @@ export const PatientsClinicalRecordS = () => {
 
     }, [])
  console.log("store patient",store.patient)
+/*  console.log("este es el valor", values) */
   return (
     <>
           <div className='tittle-pet'>
@@ -70,11 +71,11 @@ export const PatientsClinicalRecordS = () => {
         </div>
 <form action="" onSubmit={handleForm} className='text-a'>
 <p>Anamnesis</p>
-      <textarea name="anamenesis" /* value={values.anamnesis} */ OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
+      <textarea name="anamenesis" value={values.anamnesis} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
       <p>Dr. Notes</p>
-      <textarea name="drNotes" value={values.drNotes} OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
+      <textarea type="text" name="drNotes"  onChange={handleInputChange} value={values.drNotes || ""} className="area-text"  placeholder='Type here..'/><br/>
       <p>Aditional Information</p>
-      <textarea name="aditionalInfo" value={values.aditionalInfo} OnChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
+      <textarea name="aditionalInfo" value={values.aditionalInfo} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
 
       <button type="submit">Send data</button>
       </form>
