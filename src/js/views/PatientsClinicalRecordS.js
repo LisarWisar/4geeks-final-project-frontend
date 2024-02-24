@@ -13,7 +13,7 @@ export const PatientsClinicalRecordS = () => {
    });
 
    const handleInputChange = (event) => {
-    const { name, value } = event.target;
+   const { name, value } = event.target;
       setValues({
         ...values,
         [name]: value,
@@ -25,8 +25,6 @@ export const PatientsClinicalRecordS = () => {
       console.log(values);
     };
       
-
-
    let {id} = useParams() 
    console.log("mensaje",id)
 

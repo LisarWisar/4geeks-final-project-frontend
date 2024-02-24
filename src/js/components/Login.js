@@ -13,7 +13,6 @@ export const Login = () => {
     const navigate = useNavigate()
   
     const handleClick = async () => {
-      console.log(email, password)
       const login = {
         method: "POST",
         headers: {
@@ -34,21 +33,22 @@ export const Login = () => {
       })
 
       .then(data =>{
+        localStorage.setItem("jwt-token", data?.token)
         setAccountRole(data?.role)
+        if (data?.role == "user"){
+          navigate("/user")
+        }
+        else if (data?.role == "veterinarian"){
+          navigate("/vet")
+        }
+        else{
+          console.log("There was an error")
+          console.log("role: ", accountRole)
+        }
       })
       .catch(error => {
         console.error("There was an error", error);
       })
-
-      if (accountRole == "user"){
-        navigate("/user")
-      }
-      else if (accountRole == "veterinarian"){
-        navigate("/vet")
-      }
-      else{
-        console.log("There was an error")
-      }
     }
     return(
 <div> <Navbar />
