@@ -15,6 +15,7 @@ import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
 import { UserFrontPage } from "./js/views/UserFrontPage.js";
 import injectContext from "./js/store/context.js";
 
+
 function App() {
   return (
     <div className="App">
