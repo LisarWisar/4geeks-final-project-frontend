@@ -35,8 +35,8 @@ export const VetCalendarListed = () => {
     function Pagination () {
 
         let numberOfPages = Math.min(10, appointmentsNumberOfPages);
-        let first_shown_page = appointmentsPage-5
-        let last_shown_page = appointmentsPage+4
+        let first_shown_page = appointmentsPage-2
+        let last_shown_page = appointmentsPage+1
     
         let pagination = []
         for (let i = Math.max(0,first_shown_page); i<Math.min(last_shown_page ,numberOfPages) ; i++){
