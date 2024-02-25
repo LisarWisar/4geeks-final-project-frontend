@@ -11,6 +11,7 @@ export const VetCalendarListed = () => {
     const [appointmentsDict, setAppointmentsDict] = useState()
     const [appointmentsPage, setAppointmentsPage] = useState(1)
     const [maxCardsPerPage, setMaxCardsPerPage] = useState(1)  /*max ammount of cards shown per page*/
+    const [filterBy, setFilterBy] = useState({"dateFilter": "ascendent", "veterinarianFilter": null, "petNameFilter": null, "ownerNameFilter": null})
 
     async function GetAppointments () {
         await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
@@ -18,10 +19,10 @@ export const VetCalendarListed = () => {
             return response.json();
         })
         .then(data => {
-            let page = getPages(data.data.length);
+            let page = getPages(data.appointments_data.length);
             setAppointmentsNumberOfPages(page);
-            setAppointmentsDataLength(data.data.length);
-            setAppointmentsDict(data.data);
+            setAppointmentsDataLength(data.appointments_data.length);
+            setAppointmentsDict(data.appointments_data);
         })
         .catch(error => {
             console.log(error);
@@ -69,18 +70,36 @@ export const VetCalendarListed = () => {
         }}
 
     function AppointmentCards () {
+
+        if (filterBy.veterinarianFilter != null){
+            setAppointmentsDict(appointmentsDict.filter((element) =>{
+            return(element.vet_id === filterBy.veterinarianFilter)
+        }))}
+
+        if (filterBy.petNameFilter != null){
+            setAppointmentsDict(appointmentsDict.filter((element) =>{
+                return(element.pet_id === filterBy.petNameFilter)
+        }))}
+
+        if (filterBy.ownerNameFilter != null){
+            setAppointmentsDict(appointmentsDict.filter((element) =>{
+                return(element.user_id === filterBy.ownerNameFilter)
+        }))}
+
+        setAppointmentsDataLength(appointmentsDict?.length)
+
         let appointments = []
         let first_card = maxCardsPerPage*(appointmentsPage-1)
         let last_card = maxCardsPerPage*appointmentsPage
         for (let i = first_card; i<Math.min(last_card, appointmentsDataLength); i++){
             appointments.push(appointmentsDict[i])
-        }
+        }   
 
         return(
             appointments.map(appointment => (
                 <div>
                     <div className="container-fluid">
-                        <div className="row py-3">
+                        <div className="row py-3">  
                             <div className="col-2 appointmentCardDate d-flex flex-column align-items-center py-1">
                                 <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
@@ -89,7 +108,9 @@ export const VetCalendarListed = () => {
                                 <div className="row">
                                     <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
-                                    <div className="col-6 px-3 py-2">Species: {appointment.species} </div>
+                                    <div className="col-6 px-3 py-2">Pet name: {appointment.pet_name} </div>
+                                    <div className="col-6 px-3 py-2">Owner name: {appointment.owner_name}</div>
+                                    <div className="col-6 px-3 py-2">Breed: {appointment.breed}</div>
                                     <div className="col-6 px-3 py-2">Breed: {appointment.breed}</div>
                                 </div>
                             </div>
@@ -115,7 +136,24 @@ export const VetCalendarListed = () => {
                             </div>
                         </div>
                         <div className="col-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign filterByButtonWidth">Filter By</button>
+                            <button type="button" className="vetBodyButtonDesign filterByButtonWidth" data-bs-toggle="modal" data-bs-target="#filterByModal">Filter By</button>
+                            <div className="modal fade" id="filterByModal" tabindex="-1" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            ...
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

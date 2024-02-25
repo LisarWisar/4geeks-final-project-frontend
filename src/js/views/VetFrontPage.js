@@ -15,8 +15,8 @@ export const VetFrontPage = () => {
             return response.json();
         })
         .then(data => {
-            setAppointmentsDict(data.data);
-            setAppointmentsDataLength(data.data.length);
+            setAppointmentsDict(data.appointments_data);
+            setAppointmentsDataLength(data.appointments_data.length);
         })
         .catch(error => {
             console.log(error);
