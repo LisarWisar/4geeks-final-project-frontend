@@ -1,12 +1,13 @@
 .tittle-pet{
     color: #009FB7;
     text-align: center;
+    padding-top: 50px;
   }
   
   .container-box{
     font-family: sans-serif;
     border: 2px solid #009FB7;
-    padding: 20px;
+    padding: 45px;
     background-color: #E3F2FD;
   }
   
@@ -25,6 +26,7 @@
   
   .card-box{
     padding: 200px;
+    padding-top: 50px;
   
   }
   
@@ -53,4 +55,19 @@
     font-size: 16px;    
     border-radius: 5px;
 
+}
+
+#image-patient{
+  width: 200px;
+  height: 200px;
+}
+
+#data-pet{
+  color: #BE928F;
+  font-size:2cap;
+  font-weight: bold;
+}
+
+.text-a p{
+  font-weight: bold;
 }
