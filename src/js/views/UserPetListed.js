@@ -14,10 +14,10 @@ export const UserPetListed = () => {
   }, []);
   console.log("store user pet listed", store.petList);
 
-   let listPet = store.petList
+  let listPet = store?.petList
 
   return (
-    listPet.map(listPet => (
+    listPet.map(pet => (
     <>
     <div className='userPetListTitle'>
     <p>Your Pets</p>
@@ -27,17 +27,17 @@ export const UserPetListed = () => {
     <div className="row">
         <div className="col-3">
             <div className="ratio ratio-1x1">
-                <img src={listPet.image}></img>
+                <img src={pet.image}></img>
             </div>
         </div>
         <div className="col-9">
             <div id="data-pet-list"className="row">
-                <div className="col-8 px-3 py-2">Name:{listPet?.name}</div>
-                <div className="col-8 px-3 py-2">Species:{listPet?.species}</div>
-                <div className="col-6">Age:{listPet?.age}</div>
+                <div className="col-8 px-3 py-2">Name:{pet?.name}</div>
+                <div className="col-8 px-3 py-2">Species:{pet?.species}</div>
+                <div className="col-6">Age:{pet?.age}</div>
                 <button className="button-appo" onClick={() => {navigate(`/vet/clinical-records/${store.pet_id}`)}}>Appointments</button>
             </div>
-      </div>
+        </div>
     </div>
     </div>
     </div>
