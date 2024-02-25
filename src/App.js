@@ -14,7 +14,7 @@ import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
 import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
 import { UserFrontPage } from "./js/views/UserFrontPage.js";
 import injectContext from "./js/store/context.js";
-
+import { UserPetListed } from "./js/views/UserPetListed.js";
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
           <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
           <Route path ="/user" element={<UserFrontPage />} />
+          <Route path="/user/pets/:id" element={<UserPetListed/>} />
           <Route path="/about" element={<About />} />
           <Route path="/missionAndVision" element={<MissionAndVision/>} />
           <Route path="/contactUs" element={<ContactUs />} />
