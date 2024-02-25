@@ -3,9 +3,10 @@ import { Context } from "../store/context"
 import { useNavigate } from 'react-router-dom';
 import "../../styles/UserPetListed.css";
 
-
 export const UserPetListed = () => {
   const navigate = useNavigate()
+
+
   const { store, actions } = useContext(Context)
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export const UserPetListed = () => {
             </div>
         </div>
         <div className="col-9">
-            <div id="data-pet-list"className="row">
+            <div id="data-pet-list"className="row">     
                 <div className="col-8 px-3 py-2">Name:{pet?.name}</div>
                 <div className="col-8 px-3 py-2">Species:{pet?.species}</div>
                 <div className="col-6">Age:{pet?.age}</div>
