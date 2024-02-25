@@ -14,11 +14,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch(error => console.log(error))
             
         },
-        getUserPetList: (id) => {
-          const initlUrl = "http://localhost:5007/user/pet/" + id;
-              fetch(initlUrl)
+        getUserPetList: () => {
+          const initlUrl = "http://localhost:5007/user/pets"
+          const token = localStorage.getItem('jwt-token')
+          fetch(initlUrl,       
+          {method: "GET", 
+          headers: { 
+              "Content-Type": "application/json",
+              'Authorization': 'Bearer ' + token //authorization token
+          }})
+
         .then(response => response.json())
-        .then(data => setStore({petList:data}))
+        .then(data => {setStore({petList:data})
+          console.log(data)
+      })
         .catch(error => console.log(error))
           
       }

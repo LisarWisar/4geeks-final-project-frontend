@@ -6,7 +6,7 @@ import "../../styles/PatientsClinicalRecordS.css";
 export const PatientsClinicalRecordS = () => {
   const  { store, actions }= useContext(Context)
 
-   const [values, setValues] = useState({
+/*    const [values, setValues] = useState({
     anamnesis: "",
     drNotes: "",
     aditionalInfo: "",
@@ -23,7 +23,7 @@ export const PatientsClinicalRecordS = () => {
     const handleForm = (event) => {
       event.preventDefault()
       console.log(values);
-    };
+    }; */
       
    let {id} = useParams() 
    console.log("mensaje",id)
@@ -34,6 +34,8 @@ export const PatientsClinicalRecordS = () => {
 
     }, [])
  console.log("store patient",store.patient)
+
+ 
 /*  console.log("este es el valor", values) */
   return (
     <>
@@ -50,16 +52,16 @@ export const PatientsClinicalRecordS = () => {
                             </div>
                             <div className="col-9">
                                 <div id="data-pet" className="row">
-                                    <div className="col-6">Name: {store.patient.name}</div>
-                                    <div className="col-6">Species: {store.patient.species}</div>
-                                    <div className="col-6">Date of birth: {store.patient.date_of_birth}</div>
-                                    <div className="col-6">Age: {store.patient.age}</div>
-                                    <div className="col-6">Color: {store.patient.color}</div>
-                                    <div className="col-6">Owner: {store.patient.user_id}</div>
-                                    <div className="col-6">Sterilized: {store.patient.sterilized}</div>
-                                    <div className="col-6">Weight: {store.patient.weight}</div>
-                                    <div className="col-6">Breed: {store.patient.breed}</div>
-                                    <div className="col-6">Allergies: {store.patient.allergies}</div>
+                                    <div className="col-6">Name: {store?.patient.name}</div>
+                                    <div className="col-6">Species: {store?.patient.species}</div>
+                                    <div className="col-6">Date of birth: {store?.patient.date_of_birth}</div>
+                                    <div className="col-6">Age: {store?.patient.age}</div>
+                                    <div className="col-6">Color: {store?.patient.color}</div>
+                                    <div className="col-6">Owner: {store?.patient.user_id}</div>
+                                    <div className="col-6">Sterilized: {store?.patient.sterilized}</div>
+                                    <div className="col-6">Weight: {store?.patient.weight}</div>
+                                    <div className="col-6">Breed: {store?.patient.breed}</div>
+                                    <div className="col-6">Allergies: {store?.patient.allergies}</div>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +71,13 @@ export const PatientsClinicalRecordS = () => {
         <input type="radio" name="gender" value="deceased" className='app-check'></input>
         <label>Inactive</label>
         </div>
-<form action="" onSubmit={handleForm} className='text-a'>
+        <div className='text-a'> 
+        <p>Dr. Notes</p>
+      <textarea  className="area-text"  placeholder={store?.patient.doctor_notes}/><br/>
+      <p>Aditional Information</p>
+      <textarea  className="area-text"  placeholder={store?.patient.aditional_info}/><br/>
+        </div>
+{/* <form action="" onSubmit={handleForm} className='text-a'>
 <p>Anamnesis</p>
       <textarea name="anamenesis" value={values.anamnesis} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
       <p>Dr. Notes</p>
@@ -78,7 +86,7 @@ export const PatientsClinicalRecordS = () => {
       <textarea name="aditionalInfo" value={values.aditionalInfo} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
 
       <button type="submit">Send data</button>
-      </form>
+      </form> */}
       </div>
       </div>
     </>

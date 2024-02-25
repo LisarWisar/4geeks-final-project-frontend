@@ -30,3 +30,9 @@
     font-size:2cap;
     color: #BE928F;
   }
+
+  .button-appo{
+    font-size: 20px;
+    text-align: center;
+    padding-inline: 10px;
+  }
