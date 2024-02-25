@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       store: {
         patient: {},
         petList: {}
+
       },
       actions: {
         getPatient: (id) => {
@@ -14,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch(error => console.log(error))
             
         },
+
         getUserPetList: () => {
           const initlUrl = "http://localhost:5007/user/pets"
           const token = localStorage.getItem('jwt-token')

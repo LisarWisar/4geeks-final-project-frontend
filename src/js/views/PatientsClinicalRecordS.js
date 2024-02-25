@@ -5,6 +5,7 @@ import "../../styles/PatientsClinicalRecordS.css";
 
 export const PatientsClinicalRecordS = () => {
   const  { store, actions }= useContext(Context)
+  const [patients, setPatients] = useState([]);
 
 /*    const [values, setValues] = useState({
     anamnesis: "",
@@ -25,6 +26,7 @@ export const PatientsClinicalRecordS = () => {
       console.log(values);
     }; */
       
+
    let {id} = useParams() 
    console.log("mensaje",id)
 
@@ -34,12 +36,12 @@ export const PatientsClinicalRecordS = () => {
 
     }, [])
  console.log("store patient",store.patient)
-
  
 /*  console.log("este es el valor", values) */
+
   return (
     <>
-          <div className='tittle-pet'>
+      <div className='tittle-pet'>
       <h1>Patiens Clinical Record</h1>
       </div>
       <div className='card-box'>
@@ -52,6 +54,7 @@ export const PatientsClinicalRecordS = () => {
                             </div>
                             <div className="col-9">
                                 <div id="data-pet" className="row">
+
                                     <div className="col-6">Name: {store?.patient.name}</div>
                                     <div className="col-6">Species: {store?.patient.species}</div>
                                     <div className="col-6">Date of birth: {store?.patient.date_of_birth}</div>
