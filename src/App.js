@@ -14,8 +14,11 @@ import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
 import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
 import { UserFrontPage } from "./js/views/UserFrontPage.js";
 import { PrivateRoutes } from "./js/utils/PrivateRoutes.js";
+import injectContext from "./js/store/context.js";
+import { UserPetListed } from "./js/views/UserPetListed.js";
 
-export default function App() {
+
+function App() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -32,9 +35,12 @@ export default function App() {
             <Route path="/vet" element={<VetFrontPage />} />
             <Route path="/vet/calendar" element={<VetCalendarListed />} />
             <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
+            <Route path="/vet/clinical-records/:id" element={<PatientsClinicalRecordS/>} />
             <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
             <Route path ="/user" element={<UserFrontPage />} />
+            <Route path="/user/pets/:id" element={<UserPetListed/>} />
           </Route>
+          
           
           <Route render={() => <h1>Not found!</h1>} />
         </Routes>
@@ -42,3 +48,5 @@ export default function App() {
     </div>
   );
 }
+ 
+export default injectContext(App)
