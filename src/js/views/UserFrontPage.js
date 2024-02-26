@@ -28,7 +28,6 @@ export const UserFrontPage = () => {
             setAppointmentsData(data.appointments_data)
             setAppointmentsDataLength(data.appointments_data.length)
             setUserData(data.user_data)
-            console.log("data: ",data.user_data)
         })
         .catch(error => {
             console.log(error);
