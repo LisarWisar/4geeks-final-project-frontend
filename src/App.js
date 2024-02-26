@@ -13,6 +13,7 @@ import { VetCreateAppointment } from "./js/views/VetCreateAppointment.js";
 import { PatientsClinicalRecordS } from "./js/views/PatientsClinicalRecordS.js";
 import { CalendarViewSpecific } from "./js/views/CalendarViewSpecific.js";
 import { UserFrontPage } from "./js/views/UserFrontPage.js";
+import { PrivateRoutes } from "./js/utils/PrivateRoutes.js";
 import injectContext from "./js/store/context.js";
 import { UserPetListed } from "./js/views/UserPetListed.js";
 
@@ -23,19 +24,23 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/vet" element={<VetFrontPage />} />
-          <Route path="/vet/calendar" element={<VetCalendarListed />} />
-          <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
-          <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
-          <Route path ="/user" element={<UserFrontPage />} />
-          <Route path="/user/pets/:id" element={<UserPetListed/>} />
           <Route path="/about" element={<About />} />
           <Route path="/missionAndVision" element={<MissionAndVision/>} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/vet/clinical-records/:id" element={<PatientsClinicalRecordS/>} />
-          <Route path="/vet/calendar-view" element={<CalendarViewSpecific/>} />
+          <Route element={<PrivateRoutes/>}>
+            <Route path="/vet/patiens" element={<PatientsClinicalRecordS/>} />
+            <Route path="/vet/calendar-view" element={<CalendarViewSpecific/>} />
+            <Route path="/vet" element={<VetFrontPage />} />
+            <Route path="/vet/calendar" element={<VetCalendarListed />} />
+            <Route path ="/vet/clinical-records" element={<VetClinicalRecords />} />
+            <Route path="/vet/clinical-records/:id" element={<PatientsClinicalRecordS/>} />
+            <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
+            <Route path ="/user" element={<UserFrontPage />} />
+            <Route path="/user/pets/:id" element={<UserPetListed/>} />
+          </Route>
+          
           
           <Route render={() => <h1>Not found!</h1>} />
         </Routes>
