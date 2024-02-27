@@ -11,12 +11,10 @@
     background-color: #E3F2FD;
   }
   
-  img{
+  .img-radius{
     width: 120px;
     height: 120px;
     float: left;
-    border-radius: 50%;
-  
   
   }
   .box.pet{
@@ -25,7 +23,7 @@
   
   
   .card-box{
-    padding: 200px;
+    padding: 300px;
     padding-top: 50px;
   
   }
@@ -57,7 +55,7 @@
 
 }
 
-#image-patient{
+#image-patient img{
   width: 200px;
   height: 200px;
 }
@@ -69,5 +67,10 @@
 }
 
 .text-a p{
+
   font-weight: bold;
+}
+
+.ratio{
+  border-radius: 30px;
 }

@@ -16,40 +16,7 @@ export const Home = () => {
         <HeroSection/>
         <About/>
         <MissionAndVision/>
-       {/* Images of our clients 3 */}
-<div className="container">
- <div className="row">
-    <div className="col">
-        <OurClients
-        image='1'/>
-        </div>
-         <div className="col">
-        <OurClients
-        image='2'/>
-        </div>
-        <div className="col">
-        <OurClients
-        image='3'/>
-        </div>
-        {/* Images of our clients other 3 */}
-{/*         <div classNameName="container"> */}
-       <div className="row">
-       <div className="col">
-        <OurClients
-        image='4'/>
-        </div>
-        <div className="col">
-        <OurClients
-        image='5'/>
-        </div>
-         <div className="col">
-        <OurClients
-        image='6'/>
-        </div>
-        </div>
-        </div>
-        </div>
-{/*         </div> */}
+        <OurClients/>
         <ContactUs/>
         <BottomNavbar />
         </>
