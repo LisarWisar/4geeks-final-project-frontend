@@ -1,0 +1,77 @@
+
+.Register{
+    color:#009FB7;
+    text-align: center;
+  }
+  .card input {
+    margin: auto;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+align-items: center;
+margin-left: 10px;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .card input {
+    margin-bottom: 10px;
+    background-color: rgb(203, 233, 248);
+    border-radius: 10px;
+    padding: 5px;
+  }
+.card-header{
+  text-align: center;
+}
+.access-b{
+margin-left: 150px;
+width: 100px;
+height: 40px;
+
+}
+
+.round{
+  justify-content: center;
+  margin: auto;
+}
+
+select{
+  border-radius: 10px;
+  background-color: rgb(203, 233, 248);
+
+}
+
+#first{
+  padding: auto;
+  margin: auto;
+  display:flex;
+  justify-content: space-around
+}

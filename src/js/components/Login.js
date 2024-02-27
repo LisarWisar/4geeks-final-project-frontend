@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar';
+import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
@@ -36,17 +37,21 @@ export const Login = () => {
         localStorage.setItem("jwt-token", data?.token)
         setAccountRole(data?.role)
         if (data?.role == "user"){
+          toast.success('Success');
           navigate("/user")
         }
         else if (data?.role == "veterinarian"){
+          toast.success('Success');
           navigate("/vet")
         }
         else{
+          toast.error("Login Failed");
           console.log("There was an error")
           console.log("role: ", accountRole)
         }
       })
       .catch(error => {
+        toast.error("Login Failed");
         console.error("There was an error", error);
       })
     }
@@ -56,7 +61,7 @@ export const Login = () => {
     <div className="form-signin w-100 m-auto">
     <div>
       <div className="icon-log" >
-        <FontAwesomeIcon icon={faUser}/>
+      <FontAwesomeIcon icon={faUser}/>
       </div>
       <h1 className="Sign">Login</h1>
       <div className="form-floating">
@@ -70,7 +75,6 @@ export const Login = () => {
       <div className="button-login">
       <button className="w-100 py-2" type="submit"  onClick= {() => handleClick()}>Access </button>
         <div className="forgot">
-        <a>I forgot my password</a><br></br>
         <a>Don't have an account?</a><br></br>
         <button type="submit"  onClick={() => {navigate("/Register")
         }}>Create account</button>

@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Home } from "./js/views/Home";
 import { Login } from "./js/components/Login";
 import { Register } from "./js/components/Register";
@@ -16,11 +18,13 @@ import { UserFrontPage } from "./js/views/UserFrontPage.js";
 import { PrivateRoutes } from "./js/utils/PrivateRoutes.js";
 import injectContext from "./js/store/context.js";
 import { UserPetListed } from "./js/views/UserPetListed.js";
+import { CreatPet } from "./js/views/CreatPet.js";
 
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,10 +42,9 @@ function App() {
             <Route path="/vet/clinical-records/:id" element={<PatientsClinicalRecordS/>} />
             <Route path ="/vet/calendar/create-appointment" element={<VetCreateAppointment />} />
             <Route path ="/user" element={<UserFrontPage />} />
-            <Route path="/user/pets/:id" element={<UserPetListed/>} />
+            <Route path="/user/pets/" element={<UserPetListed/>} />
+            <Route path="/user/pets/add-new-pet" element={<CreatPet/>} />
           </Route>
-          
-          
           <Route render={() => <h1>Not found!</h1>} />
         </Routes>
       </BrowserRouter>
