@@ -61,6 +61,7 @@ height: 40px;
 .round{
   justify-content: center;
   margin: auto;
+  display: inline-block;
 }
 
 select{
@@ -74,4 +75,48 @@ select{
   margin: auto;
   display:flex;
   justify-content: space-around
+}
+
+.access-b{
+  display: flex;
+justify-content: center;
+margin-right: 70px;
+}
+
+.card-body{
+  align-items: center;
+  justify-items: center;
+}
+
+.form-label{
+  justify-items: center;
+}
+
+
+.btn-warning input[type="file"]{
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top:0%;
+  transform: scale(5);
+  opacity:0;
+}
+
+
+.btn-warning{
+  justify-items: center;
+  padding: 11px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color:black;
+  border: 0;
+  overflow: hidden;
+}
+
+#img-u{
+  border-radius: 50px;
+  width: 50%;
+  height: 30%;
+  margin-left: 50px;
 }
