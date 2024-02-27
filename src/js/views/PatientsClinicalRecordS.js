@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Context } from "../store/context"
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPencil} from '@fortawesome/free-solid-svg-icons';
 import "../../styles/PatientsClinicalRecordS.css";
 
 export const PatientsClinicalRecordS = () => {
   const  { store, actions }= useContext(Context)
-  const [patients, setPatients] = useState([]);
+  /* const [patients, setPatients] = useState([]); */
 
 /*    const [values, setValues] = useState({
     anamnesis: "",
@@ -48,34 +50,28 @@ export const PatientsClinicalRecordS = () => {
       <div className='container-box'>
       <div className="row">
                             <div className="col-3">
-                                <div className="ratio ratio-1x1" id="image-patient">
-                                    <img src={store.patient.image}></img>
+                                <div className="ratio" id="image-patient">
+                                    <img id="img-radius"src={store?.patient.image}></img>
                                 </div>
                             </div>
-                            <div className="col-9">
+                            <div className="col-8">
                                 <div id="data-pet" className="row">
-
                                     <div className="col-6">Name: {store?.patient.name}</div>
                                     <div className="col-6">Species: {store?.patient.species}</div>
                                     <div className="col-6">Date of birth: {store?.patient.date_of_birth}</div>
                                     <div className="col-6">Age: {store?.patient.age}</div>
                                     <div className="col-6">Color: {store?.patient.color}</div>
                                     <div className="col-6">Owner: {store?.patient.user_id}</div>
-                                    <div className="col-6">Sterilized: {store?.patient.sterilized}</div>
+                                    <div className="col-6">Sterilized: {store?.patient.sterilized ? 'Yes': 'No'}</div>
                                     <div className="col-6">Weight: {store?.patient.weight}</div>
                                     <div className="col-6">Breed: {store?.patient.breed}</div>
                                     <div className="col-6">Allergies: {store?.patient.allergies}</div>
+                                    <div  value= "false">Alive: {store?.patient.status ? "Yes": "No"}</div>
                                 </div>
                             </div>
                         </div>
-<div className='input-alive'>
-        <input type="radio" name="gender" value="alive" className='app-check'></input>
-        <label>Active</label>
-        <input type="radio" name="gender" value="deceased" className='app-check'></input>
-        <label>Inactive</label>
-        </div>
         <div className='text-a'> 
-        <p>Dr. Notes</p>
+        <p>Dr. Notes <FontAwesomeIcon icon={faPencil} /></p>
       <textarea  className="area-text"  placeholder={store?.patient.doctor_notes}/><br/>
       <p>Aditional Information</p>
       <textarea  className="area-text"  placeholder={store?.patient.aditional_info}/><br/>

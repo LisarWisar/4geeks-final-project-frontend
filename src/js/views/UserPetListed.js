@@ -1,48 +1,63 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { Context } from "../store/context"
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPaw} from '@fortawesome/free-solid-svg-icons';
+import { Context } from "../store/context";
+import { useNavigate } from "react-router-dom";
 import "../../styles/UserPetListed.css";
 
 export const UserPetListed = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-
-  const { store, actions } = useContext(Context)
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
-    actions.getUserPetList()
-
+    actions.getUserPetList();
   }, []);
   console.log("store user pet listed", store.petList);
 
-  let listPet = store?.petList
+
+  let listPet = store?.petList;
 
   return (
-    listPet.map(pet => (
+    
+   listPet.map(pet => (
     <>
-    <div className='userPetListTitle'>
-    <p>Your Pets</p>
-    </div>
-    <div className='card-box'>
-    <div className="col-8 px-3 py-2 userPetList">
-    <div className="row">
-        <div className="col-3">
-            <div className="ratio ratio-1x1">
-                <img src={pet.image}></img>
+      <div className="card-box">
+        <div className="col-8 px-3 py-2 userPetList">
+          <div className="row">
+            <div className="col-3">
+              <div className="ratio ratio-1x1">
+                <img id="img-user-pet"src={pet.image}></img>
+              </div>
             </div>
-        </div>
-        <div className="col-9">
-            <div id="data-pet-list"className="row">     
-                <div className="col-8 px-3 py-2">Name:{pet?.name}</div>
-                <div className="col-8 px-3 py-2">Species:{pet?.species}</div>
-                <div className="col-6">Age:{pet?.age}</div>
-                <button className="button-appo" onClick={() => {navigate(`/vet/clinical-records/${store.pet_id}`)}}>Appointments</button>
+            <div className="col-9">
+              <div id="data-pet-list" className="row">
+                <div className="col-8 px-3 py-2"><FontAwesomeIcon id="icon-pet"icon={faPaw}/>Name: {pet?.name}</div>
+                <div className="col-8 px-3 py-2"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Species: {pet?.species}</div>
+                <div className="col-6"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Age: {pet?.age}</div>
+
             </div>
+          </div>
+
+              </div>
+              <div className="button-appo">
+              <button
+                  onClick={() => {
+                    navigate(`/vet/clinical-records/${pet.pet_id}`);
+                  }}
+                >
+                  Clinical Records
+                </button>
+                <button
+                  onClick={() => {
+                    navigate(`/vet/clinical-records/${pet.pet_id}`);
+                  }}
+                >
+                  Appointments
+                </button>
+                </div>
         </div>
-    </div>
-    </div>
-    </div>
+      </div>
     </>
- ))
-    )
-}
+  )));
+};

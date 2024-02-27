@@ -1,10 +1,12 @@
 .title-mission{
+    font-family: 'Courier New', Courier, monospace;
     border-radius:10px;
     text-align: center;
     margin: auto;
-    width: 25rem;
+    width: 30rem;
     background-color: #D4B2AD;
     border: 100px;
+    margin-bottom: 30px;
 }
 #conten{
     display: flex;
