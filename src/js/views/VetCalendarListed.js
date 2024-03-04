@@ -17,10 +17,10 @@ export const VetCalendarListed = () => {
     const [appointmentsNumberOfPages, setAppointmentsNumberOfPages] = useState()
     const [appointmentsDict, setAppointmentsDict] = useState()
     const [appointmentsPage, setAppointmentsPage] = useState(1)
-    const [maxCardsPerPage, setMaxCardsPerPage] = useState(10)  /*max ammount of cards shown per page*/
+    const [maxCardsPerPage, setMaxCardsPerPage] = useState(1)  /*max ammount of cards shown per page*/
     const [filterBy, setFilterBy] = useState({
         "dateDayFilter":todayDateConstant.day, "dateMonthFilter": todayDateConstant.month, "dateYearFilter": todayDateConstant.year,
-        "veterinarianFilter": "", "petNameFilter": "", "ownerNameFilter": ""})
+        "veterinarianFilter": "", "petNameFilter": "", "ownerNameFilter": ""}) /*uses ID as filter*/
     const [showFilterBy, setShowFilterBy] = useState(false);
     const [vetFilterData, setVetFilterData] = useState()
     const [petFilterData, setPetFilterData] = useState()
@@ -37,7 +37,7 @@ export const VetCalendarListed = () => {
             return response.json();
         })
         .then(data => {
-            let filtered_appointments = FilterByParameters(data.appointments_data)
+            let filtered_appointments = FilterByParameters(data?.appointments_data)
             setAppointmentsDict(filtered_appointments)
             setVetFilterData(data?.filter_data_vets)
             setPetFilterData(data?.filter_data_pets)
@@ -66,8 +66,8 @@ export const VetCalendarListed = () => {
             pagination.push(i+1);
         }
         
-        let first_page = 1
-        let last_page = pagination[pagination.length-1]
+        let first_page = 1;
+        let last_page = numberOfPages;
 
         return(
             <div className="d-flex justify-content-center pt-3 pb-3">
