@@ -5,9 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
-export const VetCalendarListed = () => {
+export const UserCalendarListed = () => {
 
     const navigate = useNavigate()
+    const token = localStorage.getItem('jwt-token')
     const todayDate = new Date()
     const todayDateConstant = {
         "day": String(todayDate.getDate()).padStart(2, '0'),
@@ -20,11 +21,10 @@ export const VetCalendarListed = () => {
     const [maxCardsPerPage, setMaxCardsPerPage] = useState(10)  /*max ammount of cards shown per page*/
     const [filterBy, setFilterBy] = useState({
         "dateDayFilter":todayDateConstant.day, "dateMonthFilter": todayDateConstant.month, "dateYearFilter": todayDateConstant.year,
-        "veterinarianFilter": "", "petNameFilter": "", "ownerNameFilter": ""}) /*uses ID as filter*/
+        "veterinarianFilter": "", "petNameFilter": ""}) /*uses ID as filter*/
     const [showFilterBy, setShowFilterBy] = useState(false);
     const [vetFilterData, setVetFilterData] = useState()
     const [petFilterData, setPetFilterData] = useState()
-    const [ownerFilterData, setOwnerFilterData] = useState()
     const [showNoResults, setShowNoResults] = useState("")
     const [firstYearAppointments, setFirstYearAppointments] = useState()
 
@@ -32,7 +32,11 @@ export const VetCalendarListed = () => {
     const handleShowFilterBy = () => setShowFilterBy(true);
 
     async function GetAppointments () {
-        await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
+        await fetch('http://localhost:5007/user/calendar', {method: "GET", 
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })
@@ -41,7 +45,6 @@ export const VetCalendarListed = () => {
             setAppointmentsDict(filtered_appointments)
             setVetFilterData(data?.filter_data_vets)
             setPetFilterData(data?.filter_data_pets)
-            setOwnerFilterData(data?.filter_data_owners)
             let page = getPages(filtered_appointments.length)
             setAppointmentsNumberOfPages(page)
             setFirstYearAppointments(data?.appointments_data[data?.appointments_data.length-1].date_year)
@@ -102,11 +105,6 @@ export const VetCalendarListed = () => {
         if (filterBy.petNameFilter != false){
             appointments_filtered = appointments_filtered.filter((element) =>{
                 return(element.pet_id.toString() === filterBy.petNameFilter)
-        })}
-
-        if (filterBy.ownerNameFilter != false){
-            appointments_filtered = appointments_filtered.filter((element) =>{
-                return(element.owner_id.toString() === filterBy.ownerNameFilter)
         })}
 
         if (filterBy.dateDayFilter != false && filterBy.dateMonthFilter != false && filterBy.dateYearFilter != false){
@@ -213,10 +211,7 @@ export const VetCalendarListed = () => {
             <Navbar />
             <div className="vetBodyDiv">
                 <div className="container-fluid">
-                    <div className="row align-items-end pt-5">
-                        <div className="col-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign createAppointmentButtonWidth" onClick={() => {navigate("/vet/calendar/create-appointment")}}>Create new appointment</button>
-                        </div>
+                    <div className="row align-items-end pt-5 d-flex justify-content-end">
                         <div className="col-4 d-flex justify-content-center">
                             <div className="vetBodyTitleDesign d-flex justify-content-center">
                                 <p>Appointments</p>
@@ -248,16 +243,6 @@ export const VetCalendarListed = () => {
                                                 <option value={""}>All pets</option>
                                                 {petFilterData?.map(pet =>(
                                                     <option value={pet?.pet_id}>{pet?.pet_name}</option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="col-10">
-                                            <label for="ownerFilterBy" className="form-label">Owner</label>
-                                            <select className="form-select" id="ownerFilterBy" name="ownerNameFilter" onChange={handleChange}>
-                                                <option selected disabled value="">Choose owner</option>
-                                                <option value={""}>All owners</option>
-                                                {ownerFilterData?.map(owner =>(
-                                                    <option value={owner?.owner_id}>{owner?.owner_name}</option>
                                                 ))}
                                             </select>
                                         </div>
