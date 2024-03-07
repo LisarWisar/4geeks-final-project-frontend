@@ -7,7 +7,7 @@ export const MissionAndVision = () => {
   return (
     <>
       <div className="title-mission">
-        <h1>Mission and Vision</h1>
+        <h1 id="section2">Mission and Vision</h1>
       </div>
       <div className="container-all">
         <div className="row" id="conten">

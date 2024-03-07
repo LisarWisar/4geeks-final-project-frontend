@@ -10,7 +10,7 @@ export const OurClients = () => {
       </div> */}
 
 <div className="title-h1">
-    <h1 className='h1-title'>Our Clients</h1>
+    <h1 className='h1-title' id="section3">Our Clients</h1>
     </div>
       <div className="container">
         <div className="top-images">
