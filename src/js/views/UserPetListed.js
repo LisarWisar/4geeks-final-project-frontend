@@ -48,13 +48,13 @@ export const UserPetListed = () => {
                 >
                   Clinical Records
                 </button>
-                <button
+{/*                 <button
                   onClick={() => {
                     navigate(`/vet/clinical-records/${pet.pet_id}`);
                   }}
                 >
                   Appointments
-                </button>
+                </button> */}
                 </div>
         </div>
       </div>

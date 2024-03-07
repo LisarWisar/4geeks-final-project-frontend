@@ -56,7 +56,7 @@ export const PatientsClinicalRecordS = () => {
                             </div>
                             <div className="col-8">
                                 <div id="data-pet" className="row">
-                                    <div className="col-6">Name: {store?.patient.name}</div>
+                                    <div className="col-6">Name:  {store?.patient.name}</div>
                                     <div className="col-6">Species: {store?.patient.species}</div>
                                     <div className="col-6">Date of birth: {store?.patient.date_of_birth}</div>
                                     <div className="col-6">Age: {store?.patient.age}</div>

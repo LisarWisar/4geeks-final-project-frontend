@@ -8,7 +8,6 @@ export const MissionAndVision = () => {
     <>
       <div id="missionVision-section" className="title-mission">
         <h1>Mission and Vision</h1>
-      </div>
       <div className="container-all">
         <div className="row" id="conten">
           <div className="col-md-4">
