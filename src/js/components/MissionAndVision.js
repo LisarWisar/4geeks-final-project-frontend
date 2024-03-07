@@ -6,9 +6,8 @@ import "../../styles/MissionAndVision.css";
 export const MissionAndVision = () => {
   return (
     <>
-      <div className="title-mission">
-        <h1 id="section2">Mission and Vision</h1>
-      </div>
+      <div id="missionVision-section" className="title-mission">
+        <h1>Mission and Vision</h1>
       <div className="container-all">
         <div className="row" id="conten">
           <div className="col-md-4">

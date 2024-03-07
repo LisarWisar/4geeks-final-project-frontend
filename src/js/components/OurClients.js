@@ -4,14 +4,9 @@ import "../../styles/OurClients.css";
 export const OurClients = () => {
   return (
     <>
-{/*       <div className='container-img'>
-        <img className='image-client'
-          src={require(`../images/client-${props.image}.jpg`)} alt='client1' />
-      </div> */}
+<div id="ourCLients-section" className="title-h1">
+    <h1 className='h1-title'>Our Clients</h1>
 
-<div className="title-h1">
-    <h1 className='h1-title' id="section3">Our Clients</h1>
-    </div>
       <div className="container">
         <div className="top-images">
           <img src={require("../images/client-1.jpg")} alt="client-1" width={"350px"} height={"250px"}/>

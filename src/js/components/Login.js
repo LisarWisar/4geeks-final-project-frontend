@@ -57,10 +57,12 @@ export const Login = () => {
     }
     return(
 <div> <Navbar />
+
 <div className="center">
+  
     <div className="form-signin w-100 m-auto">
     <div>
-      <div className="icon-log" >
+    <div className="icon-user" >
       <FontAwesomeIcon icon={faUser}/>
       </div>
       <h1 className="Sign">Login</h1>

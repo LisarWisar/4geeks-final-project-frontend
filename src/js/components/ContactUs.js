@@ -6,7 +6,10 @@ import {faLocationDot, faPhoneVolume, faEnvelope} from '@fortawesome/free-solid-
 
 export const ContactUs = () => {
   return (
+    <div id="contact-section" className="contact">
+
     <div className="contact" id="section4">
+
     <div className="cont text-center">
     <div className="row">
     <div className="col">

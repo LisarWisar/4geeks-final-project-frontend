@@ -19,7 +19,7 @@ export const UserPetListed = () => {
   let listPet = store?.petList;
 
   return (
-    
+  
    listPet.map(pet => (
     <>
       <div className="card-box">
