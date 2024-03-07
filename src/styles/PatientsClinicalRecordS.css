@@ -15,6 +15,7 @@
     width: 120px;
     height: 120px;
     float: left;
+    border-radius: 30px;
   
   }
   .box.pet{
