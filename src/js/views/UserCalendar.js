@@ -215,7 +215,7 @@ export const UserCalendarListed = () => {
                         <div className="col-4 d-flex justify-content-center">
                             <div className="vetBodyTitleDesign d-flex justify-content-center">
                                 <p>Appointments</p>
-                            </div>
+                            </div> 
                         </div>
                         <div className="col-4 d-flex justify-content-center">
                             <button className="vetBodyButtonDesign filterByButtonWidth" onClick={handleShowFilterBy} >Filter By</button>
