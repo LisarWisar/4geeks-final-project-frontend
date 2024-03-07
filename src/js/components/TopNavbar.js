@@ -19,10 +19,10 @@ const [menuOpen, setMenuOpen] = useState(false)
         <span></span>
       </div>
         <ul className={menuOpen ? "open" : "" }>
-          <li><Link to="About" activeClass="active"  spy={true} smooth={true} offset={50} duration={500}>About Us</Link></li> 
-          <li><Link to="/missionAndVission">Mission and Vission</Link></li>
-          <li><Link to="/aboutTeam">About Team</Link></li>
-          <li><Link to="/contactUs">Contact</Link></li>
+          <li ><Link >About Us</Link></li> 
+          <li><Link >Mission and Vission</Link></li>
+          <li><Link >Our Clients</Link></li>
+          <li><Link >Contact</Link></li>
           <li><a onClick={() => {
                 navigate("/login")
             }}><FontAwesomeIcon icon={faUser} />Login</a></li>

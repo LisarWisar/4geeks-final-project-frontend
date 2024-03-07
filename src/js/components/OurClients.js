@@ -4,12 +4,8 @@ import "../../styles/OurClients.css";
 export const OurClients = () => {
   return (
     <>
-{/*       <div className='container-img'>
-        <img className='image-client'
-          src={require(`../images/client-${props.image}.jpg`)} alt='client1' />
-      </div> */}
 
-<div className="title-h1">
+<div id="ourCLients-section" className="title-h1">
     <h1 className='h1-title'>Our Clients</h1>
     </div>
       <div className="container">
