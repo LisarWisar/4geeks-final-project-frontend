@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPaw} from '@fortawesome/free-solid-svg-icons';
 import { Context } from "../store/context";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from '../components/Navbar';
 import "../../styles/UserPetListed.css";
 
 export const UserPetListed = () => {

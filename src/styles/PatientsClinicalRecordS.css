@@ -72,6 +72,10 @@
   font-weight: bold;
 }
 
-.ratio{
-  border-radius: 30px;
+.style-info{
+  color:#009FB7
+}
+
+#img-radius{
+  border-radius: 40px;
 }
