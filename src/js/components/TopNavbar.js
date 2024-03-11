@@ -24,11 +24,6 @@ const scrollToSection = (sectionId) => {
       </div>
         <ul className={menuOpen ? "open" : "" }>
 
-          <li ><Link >About Us</Link></li> 
-          <li><Link >Mission and Vission</Link></li>
-          <li><Link >Our Clients</Link></li>
-          <li><Link >Contact</Link></li>
-
           <li><Link onClick={() => scrollToSection('section1')}>About Us</Link></li> 
           <li><Link onClick={() => scrollToSection('section2')}>Mission and Vission</Link></li>
           <li><Link onClick={() => scrollToSection('section3')}>Our Clients</Link></li>
