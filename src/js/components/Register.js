@@ -97,13 +97,13 @@ export const Register = () => {
                             </div>
                         </div>
                         <div className='access'>
-                            <button className="access-b" type="submit">Access</button>
+                            <button className="access-b" type="submit">Create</button>
                         </div>
                         <div className="forgot">
-                            <a>Already have ann account?</a><br></br>
+                            <a>Already have an account?</a><br></br>
                             <button onClick={() => {
                                 navigate("/Login")
-                            }}>Please Sing up </button>
+                            }}>Please sign up </button>
                         </div>
                         </form>
                 </div>
