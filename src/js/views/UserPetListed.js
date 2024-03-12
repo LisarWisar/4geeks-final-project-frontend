@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPaw} from '@fortawesome/free-solid-svg-icons';
 import { Context } from "../store/context";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from '../components/Navbar';
 import "../../styles/UserPetListed.css";
 
 export const UserPetListed = () => {
@@ -19,7 +20,7 @@ export const UserPetListed = () => {
   let listPet = store?.petList;
 
   return (
-    
+  
    listPet.map(pet => (
     <>
       <div className="card-box">
@@ -48,13 +49,13 @@ export const UserPetListed = () => {
                 >
                   Clinical Records
                 </button>
-                <button
+{/*                 <button
                   onClick={() => {
                     navigate(`/vet/clinical-records/${pet.pet_id}`);
                   }}
                 >
                   Appointments
-                </button>
+                </button> */}
                 </div>
         </div>
       </div>

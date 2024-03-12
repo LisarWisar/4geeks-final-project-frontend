@@ -15,6 +15,7 @@
     width: 120px;
     height: 120px;
     float: left;
+    border-radius: 30px;
   
   }
   .box.pet{
@@ -71,6 +72,10 @@
   font-weight: bold;
 }
 
-.ratio{
-  border-radius: 30px;
+.style-info{
+  color:#009FB7
+}
+
+#img-radius{
+  border-radius: 40px;
 }

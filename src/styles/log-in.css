@@ -1,6 +1,6 @@
 
 .form-signin {
-  max-width: 330px;
+  max-width: 500px;
   padding: 1rem;
 }
 
@@ -23,10 +23,11 @@ button{
   text-align: center;
 }
 
-.icon-log{
+.icon-user{
   text-align: center;
+  font-size: 60px
 
-}
+} 
 
 .center{
   position: absolute;

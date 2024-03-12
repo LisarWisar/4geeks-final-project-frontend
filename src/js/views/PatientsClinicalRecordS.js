@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPencil} from '@fortawesome/free-solid-svg-icons';
 import "../../styles/PatientsClinicalRecordS.css";
+import { Navbar } from '../components/Navbar';
 
 export const PatientsClinicalRecordS = () => {
   const  { store, actions }= useContext(Context)
@@ -43,6 +44,7 @@ export const PatientsClinicalRecordS = () => {
 
   return (
     <>
+    <Navbar />
       <div className='tittle-pet'>
       <h1>Patiens Clinical Record</h1>
       </div>
@@ -56,7 +58,7 @@ export const PatientsClinicalRecordS = () => {
                             </div>
                             <div className="col-8">
                                 <div id="data-pet" className="row">
-                                    <div className="col-6">Name: {store?.patient.name}</div>
+                                    <div className="col-6">Name:  {store?.patient.name}</div>
                                     <div className="col-6">Species: {store?.patient.species}</div>
                                     <div className="col-6">Date of birth: {store?.patient.date_of_birth}</div>
                                     <div className="col-6">Age: {store?.patient.age}</div>
@@ -66,7 +68,7 @@ export const PatientsClinicalRecordS = () => {
                                     <div className="col-6">Weight: {store?.patient.weight}</div>
                                     <div className="col-6">Breed: {store?.patient.breed}</div>
                                     <div className="col-6">Allergies: {store?.patient.allergies}</div>
-                                    <div  value= "false">Alive: {store?.patient.status ? "Yes": "No"}</div>
+                                    <div  value= "false">Status: {store?.patient.status ? "Alive": "Deceased"}</div>
                                 </div>
                             </div>
                         </div>
