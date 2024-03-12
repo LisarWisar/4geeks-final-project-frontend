@@ -6,7 +6,7 @@ import React, { useState, useEffect} from 'react';
 export const VetCreateAppointment = () => {
 
     const navigate = useNavigate()
-    const token = localStorage.getItem('jwt-token')
+    const token = localStorage.getItem('jwt-token');
     const todayDate = new Date()
     const todayDateConstant = {
         "day": String(todayDate.getDate()).padStart(2, '0'),
@@ -23,7 +23,12 @@ export const VetCreateAppointment = () => {
     const [petsInfoLength, setPetsInfoLength] = useState()
     
     async function GetAppointmentInfo () {
-        await fetch('http://localhost:5007/vet/calendar/create-appointment', {method: "GET",})
+        await fetch('http://localhost:5007/vet/calendar/create-appointment', 
+        {method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })
@@ -41,8 +46,8 @@ export const VetCreateAppointment = () => {
     async function SendAppointmentInfo () {
         await fetch('http://localhost:5007/vet/calendar/create-appointment', {method: "POST",
             headers: {
-                "Content-Type": "application/json"
-                /*'Authorization': 'Bearer ' + token //authorization token*/
+                "Content-Type": "application/json",
+                'Authorization': 'Bearer ' + token //authorization token
             },
           body: JSON.stringify({
             appointmentData

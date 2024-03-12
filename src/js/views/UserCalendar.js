@@ -1,13 +1,11 @@
 import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar.js';
-import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 
 export const UserCalendarListed = () => {
 
-    const navigate = useNavigate()
     const token = localStorage.getItem('jwt-token')
     const todayDate = new Date()
     const todayDateConstant = {

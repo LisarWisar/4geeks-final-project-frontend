@@ -7,6 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 export const VetClinicalRecords = () => {
 
     const navigate = useNavigate()
+    const token = localStorage.getItem('jwt-token');
     const [clinicalRecordsNumberOfPages, setClinicalRecordsNumberOfPages] = useState();
     const [clinicalRecordsData, setClinicalRecordsData] = useState();
     const [clinicalRecordsPage, setClinicalRecordsPage] = useState(1);
@@ -21,7 +22,12 @@ export const VetClinicalRecords = () => {
 
 
     async function GetClinicalRecords () {
-        await fetch('http://localhost:5007/vet/clinical-records', {method: "GET",})
+        await fetch('http://localhost:5007/vet/clinical-records', 
+        {method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })
