@@ -20,45 +20,42 @@ export const UserPetListed = () => {
   let listPet = store?.petList;
 
   return (
-  
-   listPet.map(pet => (
-    <>
-      <div className="card-box">
-        <div className="col-8 px-3 py-2 userPetList">
-          <div className="row">
-            <div className="col-3">
-              <div className="ratio ratio-1x1">
-                <img id="img-user-pet"src={pet.image}></img>
-              </div>
-            </div>
-            <div className="col-9">
-              <div id="data-pet-list" className="row">
-                <div className="col-8 px-3 py-2"><FontAwesomeIcon id="icon-pet"icon={faPaw}/>Name: {pet?.name}</div>
-                <div className="col-8 px-3 py-2"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Species: {pet?.species}</div>
-                <div className="col-6"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Age: {pet?.age}</div>
+    <div>
+      <Navbar/>
+      {listPet.map(pet => (
+        <>
+          <div className="card-box">
+            <div className="col-8 px-3 py-2 userPetList">
+              <div className="row">
+                <div className="col-3">
+                  <div className="ratio ratio-1x1">
+                    <img id="img-user-pet"src={pet.image}></img>
+                  </div>
+                </div>
+                <div className="col-9">
+                  <div id="data-pet-list" className="row">
+                    <div className="col-8 px-3 py-2"><FontAwesomeIcon id="icon-pet"icon={faPaw}/>Name: {pet?.name}</div>
+                    <div className="col-8 px-3 py-2"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Species: {pet?.species}</div>
+                    <div className="col-6"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Age: {pet?.age}</div>
 
+                </div>
+              </div>
+
+                  </div>
+                  <div className="button-appo">
+                    <button
+                        onClick={() => {
+                          navigate(`/vet/clinical-records/${pet.pet_id}`);
+                        }}
+                      >
+                        Clinical Records
+                      </button>
+                  </div>
             </div>
           </div>
-
-              </div>
-              <div className="button-appo">
-              <button
-                  onClick={() => {
-                    navigate(`/vet/clinical-records/${pet.pet_id}`);
-                  }}
-                >
-                  Clinical Records
-                </button>
-{/*                 <button
-                  onClick={() => {
-                    navigate(`/vet/clinical-records/${pet.pet_id}`);
-                  }}
-                >
-                  Appointments
-                </button> */}
-                </div>
-        </div>
-      </div>
-    </>
-  )));
+        </>
+      ))}
+    </div> 
+  );
+  
 };
