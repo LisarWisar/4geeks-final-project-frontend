@@ -37,32 +37,6 @@
 }
 
 
-
-/*   .hero-container{
-    position: relative;
-    width: 100%
-  }
-  
-  #image-hero{
-    position: relative;
-    width: 100%;
-    height: 400px; 
-    background-size: cover;
-    background-position: center;
-  }
- .hero-text{
- color: #191111;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  align-items: center;
-  top: -250px;
-  padding-left: 600px;
-  -webkit-text-stroke-width: 3px;
-  margin-left:  200px;
-  transform: translate(-5%, -5%);
-} */
-
 @media screen and (max-width: 780px){
   .hero-text{
     font-size: 0.5em;

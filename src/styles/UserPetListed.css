@@ -49,3 +49,32 @@
     padding-right: 20px;
     color: black;
   }
+
+  .tittle-your-pets{
+    display: flex ;
+    justify-content: space-evenly;
+    padding-left: 400px;
+  padding-top: 30px;
+  color: #009FB7;
+  }
+  .tittle-your-pets button{
+    font-weight: bold;
+    font-size: large;
+  }
+
+
+  @media screen and (max-width: 780px){
+    #data-pet-list {
+      font-size: 0.5em;
+      padding: 0 0 1.5rem 0;
+    }
+    .tittle-your-pets{
+      font-size: 0.5em;
+      padding: 0 0 1.5rem 0;
+    }
+    .button-appo{
+      font-size: 0.5em;
+      padding: 0 0 1.5rem 0;
+    }
+  
+  } 

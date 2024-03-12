@@ -74,20 +74,10 @@ export const PatientsClinicalRecordS = () => {
                         </div>
         <div className='text-a'> 
         <p>Dr. Notes <FontAwesomeIcon icon={faPencil} /></p>
-      <textarea  className="area-text"  placeholder={store?.patient.doctor_notes}/><br/>
+      <textarea readOnly className="area-text"  placeholder={store?.patient.doctor_notes}/><br/>
       <p>Aditional Information</p>
-      <textarea  className="area-text"  placeholder={store?.patient.aditional_info}/><br/>
+      <textarea readOnly className="area-text"  placeholder={store?.patient.aditional_info}/><br/>
         </div>
-{/* <form action="" onSubmit={handleForm} className='text-a'>
-<p>Anamnesis</p>
-      <textarea name="anamenesis" value={values.anamnesis} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
-      <p>Dr. Notes</p>
-      <textarea type="text" name="drNotes"  onChange={handleInputChange} value={values.drNotes || ""} className="area-text"  placeholder='Type here..'/><br/>
-      <p>Aditional Information</p>
-      <textarea name="aditionalInfo" value={values.aditionalInfo} onChange={handleInputChange} className="area-text"  placeholder='Type here..'/><br/>
-
-      <button type="submit">Send data</button>
-      </form> */}
       </div>
       </div>
     </>
