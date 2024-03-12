@@ -46,8 +46,8 @@ export const VetCreateAppointment = () => {
     async function SendAppointmentInfo () {
         await fetch('http://localhost:5007/vet/calendar/create-appointment', {method: "POST",
             headers: {
-                "Content-Type": "application/json"
-                /*'Authorization': 'Bearer ' + token //authorization token*/
+                "Content-Type": "application/json",
+                'Authorization': 'Bearer ' + token //authorization token
             },
           body: JSON.stringify({
             appointmentData
