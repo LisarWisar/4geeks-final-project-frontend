@@ -5,12 +5,18 @@ import { useNavigate } from "react-router-dom";
 export const VetFrontPage = () => {
 
     const navigate = useNavigate();
+    const token = localStorage.getItem('jwt-token');
     const [appointmentsDict, setAppointmentsDict] = useState()
     const [appointmentsDataLength, setAppointmentsDataLength] = useState();
     const [clinicalRecordsDict, setClinicalRecordsDict] = useState();
 
     async function GetAppointments () {
-        await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
+        await fetch('http://localhost:5007/vet/calendar', 
+        {method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })
@@ -24,7 +30,12 @@ export const VetFrontPage = () => {
     }
 
     async function GetPetInfo () {
-        await fetch('http://localhost:5007/vet/clinical-record-preview', {method: "GET",})
+        await fetch('http://localhost:5007/vet/clinical-record-preview', 
+        {method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })

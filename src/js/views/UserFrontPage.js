@@ -59,8 +59,8 @@ export const UserFrontPage = () => {
                                     <div className="col-4 px-3 py-2">Name: {pet?.name}</div>
                                     <div className="col-4 px-3 py-2">Species: {pet?.species}</div>
                                     <div className="col-4 px-3 py-2">Age: {pet?.age} years old</div>
-                                    <div className="col-12 px-3 py-2 d-flex justify-content-end">
-                                        <button className="mx-5" onClick={() => {navigate(`/user/pets/${pet.pet_id}`)}}>See more..</button>
+                                    <div className="col-12 px-3 py-2 d-flex justify-content-center">
+                                        <button className="mx-5" onClick={() => {navigate(`/vet/clinical-records/${pet.pet_id}`)}}>See more..</button>
                                     </div>
                                 </div>
                             </div>

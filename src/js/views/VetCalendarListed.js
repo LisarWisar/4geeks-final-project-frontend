@@ -8,6 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 export const VetCalendarListed = () => {
 
     const navigate = useNavigate()
+    const token = localStorage.getItem('jwt-token');
     const todayDate = new Date()
     const todayDateConstant = {
         "day": String(todayDate.getDate()).padStart(2, '0'),
@@ -32,7 +33,12 @@ export const VetCalendarListed = () => {
     const handleShowFilterBy = () => setShowFilterBy(true);
 
     async function GetAppointments () {
-        await fetch('http://localhost:5007/vet/calendar', {method: "GET",})
+        await fetch('http://localhost:5007/vet/calendar', 
+        {method: "GET",
+        headers: { 
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + token //authorization token
+        }})
         .then (response => {
             return response.json();
         })
