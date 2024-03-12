@@ -22,6 +22,13 @@ export const UserPetListed = () => {
   return (
     <div>
       <Navbar/>
+      <div className='tittle-your-pets'>
+      <h1>Your Pets</h1>
+      <button                         onClick={() => {
+                          navigate(`/user/pets/add-new-pet`);
+                        }} className="add-pet">Add New Pet</button>
+      </div>
+      
       {listPet.map(pet => (
         <>
           <div className="card-box">
