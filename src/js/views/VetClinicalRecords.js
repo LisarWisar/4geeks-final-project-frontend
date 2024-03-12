@@ -114,14 +114,14 @@ export const VetClinicalRecords = () => {
                                     </div>
                             </div>
                             <div className="appointmentCardInfo py-2">
-                                    <div className="row">
-                                        <div className="col-4 px-3 py-2">Species: {record?.species}</div>
-                                        <div className="col-4 px-3 py-2">Age: {record?.age} years old</div>
-                                        <div className="col-4 px-3 py-2">Color: {record?.color} </div>
-                                        <div className="col-4 px-3 py-2">Name: {record?.name}</div>
-                                        <div className="col-4 px-3 py-2">Owner: {record?.owner}</div>
-                                        <div className="col-4 px-3 py-2 d-flex justify-content-end">
-                                            <button className="mx-5" onClick={() => {navigate(`/vet/clinical-records/${record?.pet_id}`)}}>See more...</button>
+                                    <div className="row d-flex justify-content-center">
+                                        <div className="col-6 col-xl-4 px-3 py-2">Species: {record?.species}</div>
+                                        <div className="col-6 col-xl-4 px-3 py-2">Age: {record?.age} years old</div>
+                                        <div className="col-6 col-xl-4 px-3 py-2">Color: {record?.color} </div>
+                                        <div className="col-6 col-xl-4 px-3 py-2">Name: {record?.name}</div>
+                                        <div className="col-6 col-xl-4 px-3 py-2">Owner: {record?.owner}</div>
+                                        <div className="col-6 col-xl-4 px-3 py-2 d-flex justify-content-end">
+                                            <button className="clinicalRecordSeeMoreButton" onClick={() => {navigate(`/vet/clinical-records/${record?.pet_id}`)}}>See more...</button>
                                         </div>
                                     </div>
                             </div>
@@ -147,12 +147,12 @@ export const VetClinicalRecords = () => {
             <div className="vetBodyDiv">
                 <div className="container-fluid">
                     <div className="row align-items-end pt-5 d-flex justify-content-end">
-                        <div className="col-4 d-flex justify-content-center">
-                            <div className="vetBodyTitleDesign d-flex justify-content-center">
+                        <div className="col-6 col-lg-4 d-flex justify-content-center">
+                            <div className="vetBodyTitleDesignClinicalRecords d-flex justify-content-center">
                                 <p>Clinical records</p>
                             </div>
                         </div>
-                        <div className="col-4 d-flex justify-content-center">
+                        <div className="col-3 col-lg-4 d-flex justify-content-center">
                             <button className="vetBodyButtonDesign filterByButtonWidth" onClick={handleShowFilterBy} >Filter By</button>
                             <Modal show={showFilterBy} onHide={handleCloseFilterBy}>
                                 <Modal.Header closeButton>

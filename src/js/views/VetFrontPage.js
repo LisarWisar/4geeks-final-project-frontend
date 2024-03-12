@@ -52,13 +52,13 @@ export const VetFrontPage = () => {
             appointments.map(appointment => (
                 <div>
                     <div className="container-fluid">
-                        <div className="row py-3">
-                            <div className="col-2 appointmentCardDate d-flex flex-column align-items-center py-1">
-                                <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
+                        <div className="row py-3 d-flex justify-content-center">
+                            <div className="col-10 col-lg-2 appointmentCardDate d-flex flex-column align-items-center py-1 py-lg-5">
+                                <p className="d-flex justify-content-center p-0 m-0">{appointment.weekday_abbreviated} {appointment.date_day}</p>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                             </div>
                             <div className="col-10 appointmentCardInfo py-2">
-                                <div className="row">
+                                <div className="row py-2 py-lg-5">
                                     <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
                                     <div className="col-6 px-3 py-2">Species: {appointment.species} </div>
@@ -85,7 +85,7 @@ export const VetFrontPage = () => {
                             </div>
                         </button>
                     </div>
-                    <div className="col-8 vetPreviewCard my-4">
+                    <div className="col-12 col-lg-8 vetPreviewCard my-4">
                         <p>Next appointments</p>
                         <AppointmentCards />
                     </div>
@@ -97,27 +97,26 @@ export const VetFrontPage = () => {
                         </button>
                     </div>
                     <div className="col-8 vetPreviewCard my-4 py-5">
-                        <div className="row">
-                            <div className="col-3">
+                        <div className="row d-flex justify-content-center">
+                            <div className="col-8 col-sm-6 col-lg-3">
                                 <div className="ratio ratio-1x1">
                                     <img src={clinicalRecordsDict?.image}></img>
                                 </div>
                             </div>
-                            <div className="col-9">
+                            <div className="col-9 mt-4">
                                 <div className="row">
-                                    <div className="col-6">Name: {clinicalRecordsDict?.name}</div>
-                                    <div className="col-6">Species: {clinicalRecordsDict?.species}</div>
-                                    <div className="col-6">Date of birth: {clinicalRecordsDict?.date_of_birth}</div>
-                                    <div className="col-6">Age: {clinicalRecordsDict?.age} years old</div>
-                                    <div className="col-6">Color: {clinicalRecordsDict?.color}</div>
-                                    <div className="col-6">Owner: {clinicalRecordsDict?.owner}</div>
-                                    <div className="col-6">Sterilized: {clinicalRecordsDict?.sterilized}</div>
-                                    <div className="col-6">Weight: {clinicalRecordsDict?.weight} Kg</div>
-                                    <div className="col-6">Breed: {clinicalRecordsDict?.breed}</div>
-                                    <div className="col-6">Allergies: {clinicalRecordsDict?.allergies}</div>
+                                    <div className="col-12 col-md-6">Name: {clinicalRecordsDict?.name}</div>
+                                    <div className="col-12 col-md-6">Species: {clinicalRecordsDict?.species}</div>
+                                    <div className="col-12 col-md-6">Date of birth: {clinicalRecordsDict?.date_of_birth}</div>
+                                    <div className="col-12 col-md-6">Age: {clinicalRecordsDict?.age} years old</div>
+                                    <div className="col-12 col-md-6">Color: {clinicalRecordsDict?.color}</div>
+                                    <div className="col-12 col-md-6">Owner: {clinicalRecordsDict?.owner}</div>
+                                    <div className="col-12 col-md-6">Sterilized: {clinicalRecordsDict?.sterilized}</div>
+                                    <div className="col-12 col-md-6">Weight: {clinicalRecordsDict?.weight} Kg</div>
+                                    <div className="col-12 col-md-6">Breed: {clinicalRecordsDict?.breed}</div>
+                                    <div className="col-12 col-md-6">Allergies: {clinicalRecordsDict?.allergies}</div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
