@@ -105,7 +105,7 @@ export const Register = () => {
                                 navigate("/Login")
                             }}>Please sign up </button>
                         </div>
-                        </form>
+                    </form>
                 </div>
         </div>
             );
