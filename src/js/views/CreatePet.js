@@ -7,7 +7,7 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { Navbar } from '../components/Navbar';
 import "../../styles/CreatPet.css";
 
-export const CreatPet = () => {
+export const CreatePet = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem('jwt-token')
     //Data of new user
@@ -34,7 +34,7 @@ export const CreatPet = () => {
         console.log(inputs_pet);
 
         //URL API REGISTER 
-        const url_ = "http://localhost:5007/postman/create-pet";
+        const url_ = "http://localhost:5007/user/create-pet";
         //API PETITION
         const requestPets = {
             method: "POST",
