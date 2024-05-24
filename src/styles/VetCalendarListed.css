@@ -6,6 +6,15 @@
     width: 125px;
 }
 
+.paginationButtons {
+    background-color: white;
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+}
+
 .vetBodyDiv {
     padding-left: 100px;
     padding-right: 100px;
