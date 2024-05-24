@@ -3,7 +3,7 @@ import { Context } from "../store/context"
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPencil} from '@fortawesome/free-solid-svg-icons';
-import "../../styles/PatientsClinicalRecordS.css";
+import "../../styles/PatientsClinicalRecordSpecific.css";
 import { Navbar } from '../components/Navbar';
 
 export const PatientsClinicalRecordSpecific = () => {

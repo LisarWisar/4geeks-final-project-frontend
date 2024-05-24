@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom';
+import "../../styles/Navbar.css"
 
 export const Navbar = () => {
 

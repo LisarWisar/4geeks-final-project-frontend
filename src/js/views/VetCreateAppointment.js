@@ -1,7 +1,7 @@
 import {Navbar} from "../components/Navbar.js"
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect} from 'react';
-
+import "../../styles/VetCreateAppointment.css"
 
 export const VetCreateAppointment = () => {
 

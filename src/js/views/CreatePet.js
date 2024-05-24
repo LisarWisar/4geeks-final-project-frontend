@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { Navbar } from '../components/Navbar';
-import "../../styles/CreatPet.css";
+import "../../styles/CreatePet.css";
 
 export const CreatePet = () => {
     const navigate = useNavigate();
