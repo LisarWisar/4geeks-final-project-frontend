@@ -3,6 +3,7 @@ import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import "../../styles/VetClinicalRecords.css"
 
 export const VetClinicalRecords = () => {
 

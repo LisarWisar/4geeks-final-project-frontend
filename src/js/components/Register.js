@@ -58,55 +58,55 @@ export const Register = () => {
     return (
         <div>
             <Navbar />
-                <div className='form-register'>
-                    <form className="center" onSubmit={handleSubmit} >
-                        <h1 className="Register">Register</h1>
-                        <div className="row">
-                            <div className="col-6">
-                                <label className="fullname">Full name<span className='errmsg'>*</span></label>
-                                <input value={name} onChange={e => setName(e.target.value)} type="name" />
-                            </div>
-                            <div className="col-6">
+            <div className='form-register'>
+                <form className="center" onSubmit={handleSubmit} >
+                    <h1 className="Register">Register</h1>
+                    <div className="row">
+                        <div className="col-6">
+                            <label className="fullname">Full name<span className='errmsg'>*</span></label>
+                            <input value={name} onChange={e => setName(e.target.value)} type="name" />
+                        </div>
+                        <div className="col-6">
 
-                                <label className="email">Email address<span className='errmsg'>*</span></label>
-                                <input value={emailAddress} onChange={e => setEmailAddress(e.target.value)} type="email" />
-                            </div>
+                            <label className="email">Email address<span className='errmsg'>*</span></label>
+                            <input value={emailAddress} onChange={e => setEmailAddress(e.target.value)} type="email" />
                         </div>
-                        <div className="row">
-                            <div className="col-6">
-                                <label className="form-label">Password<span className='errmsg'>*</span></label>
-                                <input value={password} onChange={e => setPassword(e.target.value)} type="password" />
-                            </div>
-                            <div className="col-6">
-                                <label className="form-label">Confirm Password<span className='errmsg'>*</span></label>
-                                <input value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} type="password" />
-                            </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <label className="form-label">Password<span className='errmsg'>*</span></label>
+                            <input value={password} onChange={e => setPassword(e.target.value)} type="password" />
                         </div>
-                        <div className='row'>
-                            <label className="form-label">Address<span className='errmsg'>*</span></label>
-                            <input value={address} onChange={e => setAddress(e.target.value)} type="text" />
+                        <div className="col-6">
+                            <label className="form-label">Confirm Password<span className='errmsg'>*</span></label>
+                            <input value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} type="password" />
                         </div>
-                        <div className="row">
-                            <div className="col-6">
-                                <label className="form-label">Phone number<span className='errmsg'>*</span></label>
-                                <input value={phone} onChange={e => setPhone(e.target.value)} type="tel" />
-                            </div>
-                            <div className="col-6">
-                                <label className="form-label">RUT<span className='errmsg'>*</span></label>
-                                <input value={rut} onChange={e => setRut(e.target.value)} type="tel" />
-                            </div>
+                    </div>
+                    <div className='row'>
+                        <label className="form-label">Address<span className='errmsg'>*</span></label>
+                        <input value={address} onChange={e => setAddress(e.target.value)} type="text" />
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <label className="form-label">Phone number<span className='errmsg'>*</span></label>
+                            <input value={phone} onChange={e => setPhone(e.target.value)} type="tel" />
                         </div>
-                        <div className='access'>
-                            <button className="access-b" type="submit">Create</button>
+                        <div className="col-6">
+                            <label className="form-label">RUT<span className='errmsg'>*</span></label>
+                            <input value={rut} onChange={e => setRut(e.target.value)} type="tel" />
                         </div>
-                        <div className="forgot">
-                            <a>Already have an account?</a><br></br>
-                            <button onClick={() => {
-                                navigate("/Login")
-                            }}>Please sign up </button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div className='access'>
+                        <button className="access-b" type="submit">Create</button>
+                    </div>
+                    <div className="forgot">
+                        <a>Already have an account?</a><br></br>
+                        <button onClick={() => {
+                            navigate("/Login")
+                        }}>Please sign up </button>
+                    </div>
+                </form>
+            </div>
         </div>
-            );
+    );
 }

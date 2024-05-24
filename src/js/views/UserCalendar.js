@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar.js';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import "../../styles/UserCalendar.css"
 
 export const UserCalendarListed = () => {
 

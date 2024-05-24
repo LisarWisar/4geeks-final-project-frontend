@@ -1,0 +1,52 @@
+.appointmentCardDate {
+    height: 200px;
+    width: 200px;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+  
+@media (max-width: 992px){
+    .appointmentCardDate{
+      height: 100px;
+    }
+}
+
+@media (max-width: 1200px){
+    .appointmentCardDate{
+      font-size: 24px;
+    }
+}
+
+.appointmentCardInfo {
+    height: 200px;
+    width: 90%;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+  
+@media (max-width: 992px){
+    .appointmentCardInfo{
+      height:150px;
+      font-size: 12px;
+    }
+}
+
+.vetBodyDiv {
+    padding-left: 100px;
+    padding-right: 100px;
+    background: white;
+}
+
+.vetPreviewCard {
+    border: 1px black solid;
+    background-color: #E3F2FD;
+    font-weight: 700;
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+}

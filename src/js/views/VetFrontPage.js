@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
+import "../../styles/VetFrontPage.css";
 
 export const VetFrontPage = () => {
 
@@ -63,12 +64,12 @@ export const VetFrontPage = () => {
             appointments.map(appointment => (
                 <div>
                     <div className="container-fluid">
-                        <div className="row py-3 d-flex justify-content-center">
-                            <div className="col-10 col-lg-2 appointmentCardDate d-flex flex-column align-items-center py-1 py-lg-5">
+                        <div className="py-3 d-flex justify-content-center">
+                            <div className="appointmentCardDate d-flex flex-column align-items-center py-1 py-lg-5">
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.weekday_abbreviated} {appointment.date_day}</p>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                             </div>
-                            <div className="col-10 appointmentCardInfo py-2">
+                            <div className="appointmentCardInfo py-2">
                                 <div className="row py-2 py-lg-5">
                                     <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>

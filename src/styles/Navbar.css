@@ -1,0 +1,27 @@
+.goBackButton {
+    height: 40px;
+    width: 160px;
+    border: #45C830;
+    background-color: #82FF9E;
+    border-radius: 10px;
+    color: #009FB7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24;
+}
+
+.logOutButton {
+    height: 40px;
+    width: 160px;
+    background-color: #007789;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24;
+}
+
+.top-banner {
+    background-color: #009fb7;
+    height: 60px;
+}

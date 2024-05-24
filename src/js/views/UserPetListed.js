@@ -23,10 +23,10 @@ export const UserPetListed = () => {
     <div>
       <Navbar/>
       <div className='tittle-your-pets'>
-      <h1>Your Pets</h1>
-      <button                         onClick={() => {
-                          navigate(`/user/pets/add-new-pet`);
-                        }} className="add-pet">Add New Pet</button>
+        <h1>Your Pets</h1>
+        <button className="add-pet" onClick={() => {
+            navigate(`/user/pets/add-new-pet`);
+        }}>Add New Pet</button>
       </div>
       
       {listPet.map(pet => (
@@ -45,24 +45,18 @@ export const UserPetListed = () => {
                     <div className="col-8 px-3 py-2"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Species: {pet?.species}</div>
                     <div className="col-6"><FontAwesomeIcon  id="icon-pet" icon={faPaw} />Age: {pet?.age}</div>
 
+                  </div>
                 </div>
               </div>
-
-                  </div>
-                  <div className="button-appo">
-                    <button
-                        onClick={() => {
-                          navigate(`/vet/clinical-records/${pet.pet_id}`);
-                        }}
-                      >
-                        Clinical Records
-                      </button>
-                  </div>
+                <div className="button-appo">
+                  <button onClick={() => {
+                        navigate(`/vet/clinical-records/${pet.pet_id}`);
+                    }}>Clinical Records</button>
+                </div>
             </div>
           </div>
         </>
       ))}
     </div> 
   );
-  
 };

@@ -1,7 +1,7 @@
 import {Navbar} from "../components/Navbar.js"
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect} from 'react';
-
+import "../../styles/VetCreateAppointment.css"
 
 export const VetCreateAppointment = () => {
 
@@ -88,7 +88,7 @@ export const VetCreateAppointment = () => {
     let petsSelect = []
     for (let i = 0; i<petsInfoLength; i++){
         petsSelect.push(petsInfo[i])
-    }
+    } 
 
     let daySelect = []
     const numDays = (y, m) => new Date(y, m, 0).getDate();
