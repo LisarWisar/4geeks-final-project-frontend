@@ -5,13 +5,13 @@ import imageAbout from "../images/3images.png";
 export const About = () => {
   return (
     <>
-    <div className="container">
-      <div className="content-section">
-        <div className="title">
-          <h1 id="section1">About Us</h1>
+      <div className="container">
+        <div className="content-section">
+          <div className="title">
+            <h1 id="section1">About Us</h1>
+          </div>
         </div>
       </div>
-    </div>
       <section className='about'>
         <div className='main'>
           <img  className="about-image" src={ imageAbout }/>
