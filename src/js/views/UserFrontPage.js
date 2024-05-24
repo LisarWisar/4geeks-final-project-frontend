@@ -82,7 +82,7 @@ export const UserFrontPage = () => {
             appointments.map(appointment => (
                 <div>
                     <div className="container-fluid">
-                        <div className="py-3 d-flex">
+                        <div className="py-3 d-lg-flex">
                             <div className="appointmentCardDate d-flex flex-column align-items-center py-1">
                                 <p className="d-flex justify-content-center p-0 m-0">Thu 25</p>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment?.time}</p>
