@@ -88,7 +88,7 @@ export const VetCreateAppointment = () => {
     let petsSelect = []
     for (let i = 0; i<petsInfoLength; i++){
         petsSelect.push(petsInfo[i])
-    }
+    } 
 
     let daySelect = []
     const numDays = (y, m) => new Date(y, m, 0).getDate();
