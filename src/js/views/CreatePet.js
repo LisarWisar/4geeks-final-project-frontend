@@ -88,13 +88,12 @@ export const CreatePet = () => {
     return (
         <>
             <Navbar />
-<div className='body'>
-
-            <div className='containerReg'>
-            <div className="titleCreat">
-                            Creat Pet
-                        </div>
-                <form action="#" onSubmit={handleSub}>
+            <div className='body'>
+                <div className='containerReg'>
+                    <div className="titleCreat">
+                        Create Pet
+                    </div>
+                    <form action="#" onSubmit={handleSub}>
                         <div className='round'> 
                             <input type="file" accept='image/*' onChange={uploadImage}/>
                             <FontAwesomeIcon icon={faCamera}/>
@@ -104,70 +103,70 @@ export const CreatePet = () => {
                         </div>
                         <div className='user-details'>
                             <div className="input-box">
-                                    <span className="details">Name</span>
-                                    <input value={name} onChange={e => setName(e.target.value)} />      
-                                    </div>
-                                    <div className="input-box">           
-                                    <span className="form-span">Species</span>
-                                    <input value={species} onChange={e => setSpecies(e.target.value)} type="text" />
-                                    </div>
-                                    <div className="input-box">
-                                    <span className="email">Date of birth</span>
-                                    <input value={dateOfBirth} onChange={e => setDateOfBirth(e.target.value)} type='date' />
-                                    </div>
-                                    <div className="input-box">
-                                    <span className="form-span">Age</span>
-                                    <input value={age} onChange={e => setAge(e.target.value)} type='number' />
-                                    </div>
-                                    <div className="input-box">
-                                    <span className="form-span">Color</span>
-                                    <input value={color} onChange={e => setColor(e.target.value)} type='text' />
-                                    </div>
-                                    <div className="input-box">
-                                    <span className="form-span">Sterilized</span>
-                                    <select onChange={e => setSterilized(e.target.value)} type="text">
-                                        <option value="true" >Sterilized</option>
-                                        <option value="false" >No Sterilized</option>
-                                    </select>     
-                                    </div>   
-                                    <div className="input-box">                        
-                                    <span className="form-span">Weight</span>
-                                    <input value={weight} onChange={e => setWeight(e.target.value)} type='number' />  
-                                    </div>
-                                    <div className="input-box">                                                           
-                                    <span className="form-span">Height</span>
-                                    <input value={height} onChange={e => setHeight(e.target.value)} type='number' /> 
-                                    </div>   
-                                    <div className="input-box">                                                           
-                                    <span className="form-span">Breed</span>
-                                    <input value={breed} onChange={e => setBreed(e.target.value)} type="text" />    
-                                    </div>  
-                                    <div className="input-box">                                                         
-                                    <span className="form-span">Allergies</span>
-                                    <input value={allergies} onChange={e => setAllergies(e.target.value)} type="text" /> 
-                                    </div> 
-                                    <div className="input-box">                                                            
-                                    <span className="form-span">Additional_info</span>
-                                    <input value={aditional_info} onChange={e => setAdditionalInfo(e.target.value)} type="text" />  
-                                    </div>       
-                                    <div className="input-box">                                                          
-                                    <span className="form-span">Dr. Notes</span>
-                                    <input value={doctor_notes} onChange={e => setDoctorNotes(e.target.value)} type="text" />   
-                                    </div> 
-                                    <div className="input-box">                                                     
-                                    <span className="form-span">Status</span>
-                                    <select onChange={e => setStatus(e.target.value)} type="text">                     
-                                        <option value="true" >Active</option>
-                                        <option value="false" >Inactive</option>
-                                    </select>      
-                                    </div>                            
+                                <span className="details">Name</span>
+                                <input value={name} onChange={e => setName(e.target.value)} />      
+                            </div>
+                            <div className="input-box">           
+                                <span className="form-span">Species</span>
+                                <input value={species} onChange={e => setSpecies(e.target.value)} type="text" />
+                            </div>
+                            <div className="input-box">
+                                <span className="email">Date of birth</span>
+                                <input value={dateOfBirth} onChange={e => setDateOfBirth(e.target.value)} type='date' />
+                            </div>
+                            <div className="input-box">
+                                <span className="form-span">Age</span>
+                                <input value={age} onChange={e => setAge(e.target.value)} type='number' />
+                            </div>
+                            <div className="input-box">
+                                <span className="form-span">Color</span>
+                                <input value={color} onChange={e => setColor(e.target.value)} type='text' />
+                            </div>
+                            <div className="input-box">
+                                <span className="form-span">Sterilized</span>
+                                <select onChange={e => setSterilized(e.target.value)} type="text">
+                                    <option value="true" >Sterilized</option>
+                                    <option value="false" >No Sterilized</option>
+                                </select>     
+                            </div>   
+                            <div className="input-box">                        
+                                <span className="form-span">Weight</span>
+                                <input value={weight} onChange={e => setWeight(e.target.value)} type='number' />  
+                            </div>
+                            <div className="input-box">                                                           
+                                <span className="form-span">Height</span>
+                                <input value={height} onChange={e => setHeight(e.target.value)} type='number' /> 
+                            </div>   
+                            <div className="input-box">                                                           
+                                <span className="form-span">Breed</span>
+                                <input value={breed} onChange={e => setBreed(e.target.value)} type="text" />    
+                            </div>  
+                            <div className="input-box">                                                         
+                                <span className="form-span">Allergies</span>
+                                <input value={allergies} onChange={e => setAllergies(e.target.value)} type="text" /> 
+                            </div> 
+                            <div className="input-box">                                                            
+                                <span className="form-span">Additional_info</span>
+                                <input value={aditional_info} onChange={e => setAdditionalInfo(e.target.value)} type="text" />  
+                            </div>       
+                            <div className="input-box">                                                          
+                                <span className="form-span">Dr. Notes</span>
+                                <input value={doctor_notes} onChange={e => setDoctorNotes(e.target.value)} type="text" />   
+                            </div> 
+                            <div className="input-box">                                                     
+                                <span className="form-span">Status</span>
+                                <select onChange={e => setStatus(e.target.value)} type="text">                     
+                                    <option value="true" >Active</option>
+                                    <option value="false" >Inactive</option>
+                                </select>      
+                            </div>                            
                         </div>
-                    <div className='button'>
-                        <input className="access-b" type="submit" value="Create" />
+                        <div className='button'>
+                            <input className="access-b" type="submit" value="Create" />
                         </div>
-                </form>
+                    </form>
                 </div>
-                </div>
+            </div>
         </>
     );
 }
