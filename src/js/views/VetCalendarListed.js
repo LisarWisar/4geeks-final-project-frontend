@@ -3,7 +3,7 @@ import { Navbar } from '../components/Navbar.js';
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import "../../styles/VetCalendarListed.css"
+import styles from "../../styles/VetCalendarListed.module.css"
 
 export const VetCalendarListed = () => {
 
@@ -159,7 +159,7 @@ export const VetCalendarListed = () => {
                         <div>
                             <div className="container-fluid">
                                 <div className="row py-3 d-flex justify-content-center">  
-                                    <div className="col-10 col-lg-2 appointmentCardDate d-flex flex-column align-items-center py-1 py-lg-5">
+                                    <div className={`col-10 col-lg-2 ${styles.appointmentCardDate} d-flex flex-column align-items-center py-1 py-lg-5`}>
                                         <p className="d-flex justify-content-center p-0 m-0">{appointment.weekday_abbreviated} {appointment.date_day}</p>
                                         <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                                     </div>
