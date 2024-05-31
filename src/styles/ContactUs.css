@@ -1,0 +1,15 @@
+.contact{
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.title-contact{
+    border-radius:10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    width: 15rem;
+    background-color: #D4B2AD;
+    border: 100px;
+}

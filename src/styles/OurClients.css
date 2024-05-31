@@ -1,0 +1,38 @@
+ .container{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+} 
+
+
+.image-client{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+} 
+
+.top-images img{
+    border-radius: 10px;
+    margin: 0 20px;
+
+}
+
+.bottom-images img{
+    border-radius: 10px;
+    margin: 0 20px;
+
+}
+.title-h1{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius:10px;
+    text-align: center;
+    margin: auto;
+    width: 25rem;
+    background-color: #D4B2AD;
+    border: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

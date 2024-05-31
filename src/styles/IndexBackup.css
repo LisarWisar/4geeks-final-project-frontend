@@ -1,0 +1,270 @@
+.top-banner {
+    background-color: #009fb7;
+    height: 60px;
+  }
+  
+  .logOutButton {
+    height: 40px;
+    width: 160px;
+    background-color: #007789;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24;
+  }
+  
+  .goBackButton {
+    height: 40px;
+    width: 160px;
+    border: #45C830;
+    background-color: #82FF9E;
+    border-radius: 10px;
+    color: #009FB7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24;
+  }
+  
+  .vetFrontBody {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .vetBodyButtonDesign {
+    height: 30px;
+    background-color: #009fb7;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  @media(max-width: 1200px){
+    .vetBodyButtonDesign{
+      font-size: 12px;
+      height: 40px
+    }
+  }
+  
+  @media(max-width: 768px){
+    .vetBodyButtonDesign{
+      font-size: 10px;
+    }
+  }
+  .createAppointmentButtonWidth {
+    width: 270px;
+  }
+  
+  @media(max-width: 1200px){
+    .createAppointmentButtonWidth{
+      width: 150px;
+    }
+  }
+  
+  
+  .filterByButtonWidth {
+    width: 125px;
+  }
+  
+  .vetBodyTitleDesign {
+    height: 50px;
+    line-height: 50px;
+    width: 600px;
+    background-color: #009fb7;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    padding-left: 5px;
+    padding-right: 5px;
+  
+  }
+  
+  @media(max-width:1200px){
+    .vetBodyTitleDesign{
+      font-size: 16px;
+      width: 200px;
+    }
+  }
+  
+  .vetBodyTitleDesignClinicalRecords {
+    height: 50px;
+    line-height: 50px;
+    width: 600px;
+    background-color: #009fb7;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    padding-left: 5px;
+    padding-right: 5px;
+  
+  }
+  
+  @media(max-width:1400px){
+    .vetBodyTitleDesignClinicalRecords{
+      font-size: 30px;
+    }
+  }
+  
+  @media(max-width:1200px){
+    .vetBodyTitleDesignClinicalRecords{
+      font-size: 16px;
+    }
+  }
+  
+  
+  
+  .paginationButtons {
+    background-color: white;
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+  }
+  
+  .vetBodyDiv {
+    padding-left: 100px;
+    padding-right: 100px;
+    background: white;
+  }
+  
+  .calendarListedDayDivider {
+    background-color: #E3F2FD;
+    height: 60px;
+    color: #009fb7;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .calendarListedDay {
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    margin: 0px;
+  }
+  
+  @media(max-width: 768px){
+    .calendarListedDay{
+      font-size: 32px;
+    }
+  }
+  
+  .calendarListedMonth {
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    margin: 0px;
+  }
+  
+  @media(max-width: 768px){
+    .calendarListedMonth{
+      font-size: 26px;
+    }
+  }
+  
+  .appointmentCardDate {
+    height: 200px;
+    width: 200px;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+  }
+  
+  @media (max-width: 992px){
+    .appointmentCardDate{
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 1200px){
+    .appointmentCardDate{
+      font-size: 24px;
+    }
+  }
+  
+  .appointmentCardInfo {
+    height: 200px;
+    width: 90%;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 992px){
+    .appointmentCardInfo{
+      height:150px;
+      font-size: 12px;
+    }
+  }
+  
+  .appointmentCardInfoListed {
+    height: 200px;
+    width: 90%;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 992px){
+    .appointmentCardInfoListed{
+      font-size: 14px;
+      height: 250px;
+    }
+  }
+  
+  .appointmentCardPicture {
+    height: 200px;
+    width: 90%;
+    border: 1px gray solid;
+    background-color: #F8FCFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  
+  .bodyTitleButton {
+    border: none;
+    background-color: white;
+  }
+  
+  .vetPreviewCard {
+    border: 1px black solid;
+    background-color: #E3F2FD;
+    font-weight: 700;
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  @media(max-width: 1500px){
+    .vetPreviewCard{
+      font-size: 20px;
+    }
+  }
+  
+  @media(max-width: 1200px){
+    .vetPreviewCard{
+      font-size: 14px;
+    }
+  }
+  
+  .clinicalRecordSeeMoreButton {
+    width: 200px;
+    height: 30px;
+  }

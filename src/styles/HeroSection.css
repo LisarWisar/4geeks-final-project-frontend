@@ -1,0 +1,55 @@
+
+.hero-container{
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: url(https://www.esaote.com/uploads/pics/header-us-mri-vet_18.jpg);
+  background-size: cover;
+}
+
+
+.container- {
+  position:absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.container- h1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 35px;
+  letter-spacing: 0.2em;
+  font-weight: bold;
+
+
+} 
+
+.container- h1 span{
+  border: 5px solid white;
+  padding: 3px 54px;
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 780px){
+  .hero-text{
+    font-size: 0.5em;
+    padding: 0 0 1.5rem 0;
+  }
+  span{
+    font-size: 0.5em;
+  }
+} 
+
+
+@media screen and (max-width: 1038px){
+  .hero-container{
+    height: 25vh;
+  }
+}
