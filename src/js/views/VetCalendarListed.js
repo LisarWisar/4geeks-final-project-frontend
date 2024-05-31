@@ -77,13 +77,13 @@ export const VetCalendarListed = () => {
 
         return(
             <div className="d-flex justify-content-center pt-3 pb-3">
-                <button onClick={() => {setAppointmentsPage(1)}} className="paginationButtons">&lt;&lt;First</button>
-                <button onClick={() => {setAppointmentsPage(Math.max(appointmentsPage-1,first_page))}} className="paginationButtons">Prev</button>
+                <button onClick={() => {setAppointmentsPage(1)}} className={styles.paginationButtons}>&lt;&lt;First</button>
+                <button onClick={() => {setAppointmentsPage(Math.max(appointmentsPage-1,first_page))}} className={styles.paginationButtons}>Prev</button>
                 {pagination.map(page => (
-                    <button onClick={() => {setAppointmentsPage(page)}} className="paginationButtons">{page}</button>
+                    <button onClick={() => {setAppointmentsPage(page)}} className={styles.paginationButtons}>{page}</button>
                     ))}
-                    <button onClick={() => {setAppointmentsPage(Math.min(appointmentsPage+1, last_page))}} className="paginationButtons">Next</button>
-                    <button onClick={() => {setAppointmentsPage(last_page)}} className="paginationButtons">Last&gt;&gt;</button>
+                    <button onClick={() => {setAppointmentsPage(Math.min(appointmentsPage+1, last_page))}} className={styles.paginationButtons}>Next</button>
+                    <button onClick={() => {setAppointmentsPage(last_page)}} className={styles.paginationButtons}>Last&gt;&gt;</button>
                 </div>
              
             );
@@ -163,7 +163,7 @@ export const VetCalendarListed = () => {
                                         <p className="d-flex justify-content-center p-0 m-0">{appointment.weekday_abbreviated} {appointment.date_day}</p>
                                         <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                                     </div>
-                                    <div className="col-10 appointmentCardInfoListed py-2">
+                                    <div className={`col-10 ${styles.appointmentCardInfoListed} py-2`}>
                                         <div className="row py-2 py-lg-4">
                                             <div className="col-12 col-lg-6 px-3 py-2">Veterinarian: {appointment.veterinarian }</div>
                                             <div className="col-12 col-lg-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
@@ -180,9 +180,9 @@ export const VetCalendarListed = () => {
                 }
                 else if(appointment.frontend_element_type == "date_header") {
                     return(
-                        <div className="d-flex justify-content-between align-items-center calendarListedDayDivider">
-                            <p className="calendarListedDay">{appointment.weekday} {appointment.date_day}</p>
-                            <p className="calendarListedMonth">{appointment.month_name}</p>
+                        <div className={`d-flex justify-content-between align-items-center ${styles.calendarListedDayDivider}`}>
+                            <p className={styles.calendarListedDay}>{appointment.weekday} {appointment.date_day}</p>
+                            <p className={styles.calendarListedMonth}>{appointment.month_name}</p>
                         </div>
                     )
                 }   
@@ -219,19 +219,19 @@ export const VetCalendarListed = () => {
     return(
         <div>
             <Navbar />
-            <div className="vetBodyDiv">
+            <div className={styles.vetBodyDiv}>
                 <div className="container-fluid">
                     <div className="row align-items-end pt-5">
                         <div className="col-3 col-lg-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign createAppointmentButtonWidth" onClick={() => {navigate("/vet/calendar/create-appointment")}}>Create new appointment</button>
+                            <button className={`${styles.vetBodyButtonDesign} ${styles.createAppointmentButtonWidth}`} onClick={() => {navigate("/vet/calendar/create-appointment")}}>Create new appointment</button>
                         </div>
                         <div className="col-6 col-lg-4 d-flex justify-content-center">
-                            <div className="vetBodyTitleDesign d-flex justify-content-center">
+                            <div className={`${styles.vetBodyTitleDesign} d-flex justify-content-center`}>
                                 <p>Appointments</p>
                             </div>
                         </div>
                         <div className="col-3 col-lg-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign filterByButtonWidth" onClick={handleShowFilterBy} >Filter By</button>
+                            <button className={`${styles.vetBodyButtonDesign} ${styles.filterByButtonWidth}`} onClick={handleShowFilterBy} >Filter By</button>
                             <Modal show={showFilterBy} onHide={handleCloseFilterBy}>
                                 <Modal.Header closeButton>
                                 <Modal.Title>Choose Filters</Modal.Title>

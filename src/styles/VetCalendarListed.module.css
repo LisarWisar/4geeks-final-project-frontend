@@ -36,6 +36,34 @@
     }
 }
 
+.calendarListedDay {
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    margin: 0px;
+}
+  
+@media(max-width: 768px){
+    .calendarListedDay{
+      font-size: 32px;
+    }
+}
+  
+.calendarListedMonth {
+    color:#009fb7;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    margin: 0px;
+}
+  
+@media(max-width: 768px){
+    .calendarListedMonth{
+        font-size: 26px;
+    }
+}
+
 .createAppointmentButtonWidth {
     width: 270px;
 }
