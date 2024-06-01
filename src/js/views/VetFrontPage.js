@@ -50,8 +50,8 @@ export const VetFrontPage = () => {
     }
 
     useEffect(() => {
-        GetAppointments()
-        GetPetInfo()
+        GetAppointments();
+        GetPetInfo();
       }, []);
 
     function AppointmentCards () {
