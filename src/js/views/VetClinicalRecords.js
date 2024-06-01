@@ -3,7 +3,7 @@ import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import "../../styles/VetClinicalRecords.css"
+import styles from "../../styles/VetClinicalRecords.module.css"
 
 export const VetClinicalRecords = () => {
 
@@ -67,13 +67,13 @@ export const VetClinicalRecords = () => {
 
         return(
             <div className="d-flex justify-content-center pt-3 pb-3">
-                <button onClick={() => {setClinicalRecordsPage(1)}} className="paginationButtons">&lt;&lt;First</button>
-                <button onClick={() => {setClinicalRecordsPage(Math.max(clinicalRecordsPage-1,first_page))}} className="paginationButtons">Prev</button>
+                <button onClick={() => {setClinicalRecordsPage(1)}} className={styles.paginationButtons}>&lt;&lt;First</button>
+                <button onClick={() => {setClinicalRecordsPage(Math.max(clinicalRecordsPage-1,first_page))}} className={styles.paginationButtons}>Prev</button>
                 {pagination.map(page => (
-                    <button onClick={() => {setClinicalRecordsPage(page)}} className="paginationButtons">{page}</button>
+                    <button onClick={() => {setClinicalRecordsPage(page)}} className={styles.paginationButtons}>{page}</button>
                     ))}
-                    <button onClick={() => {setClinicalRecordsPage(Math.min(clinicalRecordsPage+1, last_page))}} className="paginationButtons">Next</button>
-                    <button onClick={() => {setClinicalRecordsPage(last_page)}} className="paginationButtons">Last&gt;&gt;</button>
+                    <button onClick={() => {setClinicalRecordsPage(Math.min(clinicalRecordsPage+1, last_page))}} className={styles.paginationButtons}>Next</button>
+                    <button onClick={() => {setClinicalRecordsPage(last_page)}} className={styles.paginationButtons}>Last&gt;&gt;</button>
                 </div>
              
         );
@@ -115,12 +115,12 @@ export const VetClinicalRecords = () => {
                 <div>
                     <div className="container-fluid">
                         <div className="py-3 d-flex">
-                            <div className="appointmentCardDate">
+                            <div className={styles.appointmentCardDate}>
                                     <div className="ratio ratio-1x1">
                                         <img src={record.image}></img>
                                     </div>
                             </div>
-                            <div className="appointmentCardInfo py-2">
+                            <div className={`${styles.appointmentCardInfo} py-2`}>
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-6 col-xl-4 px-3 py-2">Species: {record?.species}</div>
                                         <div className="col-6 col-xl-4 px-3 py-2">Age: {record?.age} years old</div>
@@ -128,7 +128,7 @@ export const VetClinicalRecords = () => {
                                         <div className="col-6 col-xl-4 px-3 py-2">Name: {record?.name}</div>
                                         <div className="col-6 col-xl-4 px-3 py-2">Owner: {record?.owner}</div>
                                         <div className="col-6 col-xl-4 px-3 py-2 d-flex justify-content-end">
-                                            <button className="clinicalRecordSeeMoreButton" onClick={() => {navigate(`/vet/clinical-records/${record?.pet_id}`)}}>See more...</button>
+                                            <button className={styles.clinicalRecordSeeMoreButton} onClick={() => {navigate(`/vet/clinical-records/${record?.pet_id}`)}}>See more...</button>
                                         </div>
                                     </div>
                             </div>
@@ -151,16 +151,16 @@ export const VetClinicalRecords = () => {
     return(
         <div>
             <Navbar />
-            <div className="vetBodyDiv">
+            <div className={styles.vetBodyDiv}>
                 <div className="container-fluid">
                     <div className="row align-items-end pt-5 d-flex justify-content-end">
                         <div className="col-6 col-lg-4 d-flex justify-content-center">
-                            <div className="vetBodyTitleDesignClinicalRecords d-flex justify-content-center">
+                            <div className={`${styles.vetBodyTitleDesignClinicalRecords} d-flex justify-content-center`}>
                                 <p>Clinical records</p>
                             </div>
                         </div>
                         <div className="col-3 col-lg-4 d-flex justify-content-center">
-                            <button className="vetBodyButtonDesign filterByButtonWidth" onClick={handleShowFilterBy} >Filter By</button>
+                            <button className={`${styles.vetBodyButtonDesign} ${styles.filterByButtonWidth}`} onClick={handleShowFilterBy} >Filter By</button>
                             <Modal show={showFilterBy} onHide={handleCloseFilterBy}>
                                 <Modal.Header closeButton>
                                 <Modal.Title>Choose Filters</Modal.Title>

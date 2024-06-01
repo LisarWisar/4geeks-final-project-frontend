@@ -23,7 +23,7 @@ export const PatientsClinicalRecordSpecific = () => {
     <>
       <Navbar />
       <div className='tittle-pet'>
-        <h1>Patiens Clinical Record</h1>
+        <h1>Patient Clinical Record</h1>
       </div>
       <div className='card-box'>
         <div className='container-box'>
