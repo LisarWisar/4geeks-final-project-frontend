@@ -35,7 +35,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>} />
           <Route element={<PrivateRoutes/>}>
-            <Route path="/vet/patiens" element={<PatientsClinicalRecordSpecific/>} />
             <Route path="/vet/calendar-view" element={<CalendarViewSpecific/>} />
             <Route path="/vet" element={<VetFrontPage />} />
             <Route path="/vet/calendar" element={<VetCalendarListed />} />
