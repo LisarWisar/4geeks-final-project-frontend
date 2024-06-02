@@ -1,6 +1,5 @@
 .appointmentCardDate {
     height: 200px;
-    width: 200px;
     border: 1px gray solid;
     background-color: #F8FCFF;
     font-family: 'Inter', sans-serif;
@@ -22,7 +21,6 @@
 
 .appointmentCardInfo {
     height: 200px;
-    width: 90%;
     border: 1px gray solid;
     background-color: #F8FCFF;
     font-family: 'Inter', sans-serif;
