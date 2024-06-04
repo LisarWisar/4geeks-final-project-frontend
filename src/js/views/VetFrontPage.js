@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Navbar } from '../components/Navbar';
 import { useNavigate } from "react-router-dom";
-import "../../styles/VetFrontPage.css";
+import styles from "../../styles/VetFrontPage.module.css";
 
 export const VetFrontPage = () => {
 
@@ -50,8 +50,8 @@ export const VetFrontPage = () => {
     }
 
     useEffect(() => {
-        GetAppointments()
-        GetPetInfo()
+        GetAppointments();
+        GetPetInfo();
       }, []);
 
     function AppointmentCards () {
@@ -64,12 +64,12 @@ export const VetFrontPage = () => {
             appointments.map(appointment => (
                 <div>
                     <div className="container-fluid">
-                        <div className="py-3 d-flex justify-content-center">
-                            <div className="appointmentCardDate d-flex flex-column align-items-center py-1 py-lg-5">
+                        <div className="py-3 d-flex justify-content-center row">
+                            <div className={`${styles.appointmentCardDate} col-10 col-lg-2 d-flex flex-column align-items-center py- py-lg-5`}>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.weekday_abbreviated} {appointment.date_day}</p>
                                 <p className="d-flex justify-content-center p-0 m-0">{appointment.time}</p>
                             </div>
-                            <div className="appointmentCardInfo py-2">
+                            <div className={`${styles.appointmentCardInfo} col-10 py-2`}>
                                 <div className="row py-2 py-lg-5">
                                     <div className="col-6 px-3 py-2">Veterinarian: {appointment.veterinarian}</div>
                                     <div className="col-6 px-3 py-2">Type of visit: {appointment.type_of_visit}</div>
@@ -87,28 +87,28 @@ export const VetFrontPage = () => {
     return(
     <div>
         <Navbar />
-        <div className="vetBodyDiv">
+        <div className={styles.vetBodyDiv}>
             <div className="container-fluid">
                 <div className="row pt-5 d-flex justify-content-center">
                     <div className="col-12 d-flex justify-content-center">
-                        <button className="bodyTitleButton" onClick={() => {navigate("/vet/calendar")}}>
-                            <div className="vetBodyTitleDesign">
+                        <button className={styles.bodyTitleButton} onClick={() => {navigate("/vet/calendar")}}>
+                            <div className={styles.vetBodyTitleDesign}>
                                 <p>Appointments</p>
                             </div>
                         </button>
                     </div>
-                    <div className="col-12 col-lg-8 vetPreviewCard my-4">
+                    <div className={`col-12 col-lg-8 ${styles.vetPreviewCard} my-4`}>
                         <p>Next appointments</p>
                         <AppointmentCards />
                     </div>
                     <div className="col-12 d-flex justify-content-center">
-                        <button className="bodyTitleButton" onClick={() => {navigate("/vet/clinical-records")}}>
-                            <div className="vetBodyTitleDesign">
+                        <button className={styles.bodyTitleButton} onClick={() => {navigate("/vet/clinical-records")}}>
+                            <div className={styles.vetBodyTitleDesign}>
                                 <p>Clinical records</p>
                             </div>
                         </button>
                     </div>
-                    <div className="col-8 vetPreviewCard my-4 py-5">
+                    <div className={`col-8 ${styles.vetPreviewCard} my-4 py-5`}>
                         <div className="row d-flex justify-content-center">
                             <div className="col-8 col-sm-6 col-lg-3">
                                 <div className="ratio ratio-1x1">
