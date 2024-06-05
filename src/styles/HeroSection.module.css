@@ -1,5 +1,5 @@
 
-.hero-container{
+.heroContainer{
   position: relative;
   height: 500px;
   overflow: hidden;
@@ -8,7 +8,7 @@
 }
 
 
-.container- {
+.containerClass {
   position:absolute;
   top: 50%;
   left: 55%;
@@ -21,7 +21,7 @@
 }
 
 
-.container- h1{
+.containerClass h1{
   font-family: 'Courier New', Courier, monospace;
   font-size: 35px;
   letter-spacing: 0.2em;
@@ -30,7 +30,7 @@
 
 } 
 
-.container- h1 span{
+.containerClass h1 span{
   border: 5px solid white;
   padding: 3px 54px;
   display: inline-block;
