@@ -93,6 +93,9 @@ nav .menu span{
     justify-content: flex-start;
 }
 
+.topNavbarNav {
+    z-index: 1;
+}
 
 .doolittles{
     display: flex;

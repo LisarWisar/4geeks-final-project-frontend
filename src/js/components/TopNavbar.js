@@ -13,7 +13,7 @@ const TopNavbar = () => {
     section.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <nav>
+    <nav className="topNavbarNav">
       <div className="doolittles"><img id="logo-img" src="https://t4.ftcdn.net/jpg/04/17/87/67/360_F_417876741_pofg19rDWTv6ZmgQ8qTOgVMJ0H3N2uPh.jpg" width="55" alt="Doolittles"/>
         <h1 >Doolittles</h1>
       </div>

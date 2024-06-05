@@ -1,7 +1,7 @@
 //import { useNavigate } from "react-router-dom";
 import TopNavbar from "../components/TopNavbar.js";
 import BottomNavbar from "../components/BottomNavbar.js";
-import HeroSection from "../components/HeroSection.js";
+import { HeroSection } from "../components/HeroSection.js";
 import About from "../components/About.js";
 import MissionAndVision from "../components/MissionAndVision.js";
 import ContactUs from "../components/ContactUs.js";
